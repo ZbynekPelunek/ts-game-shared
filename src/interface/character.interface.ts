@@ -1,9 +1,12 @@
+import { Guid } from 'guid-typescript';
+
 import { IAdventure } from './adventures.interface';
+import { Currency } from './currency.interface';
 import { EquipableItem, EquipmentSlot, InventoryItem, StatName } from './item.interface';
 
 export interface ICharacter {
-  accountId: string;
-  characterId: string;
+  accountId: Guid | string;
+  _id: Guid | string;
   name: string;
   level: number;
   currentExperience: number;
@@ -13,22 +16,25 @@ export interface ICharacter {
   inventory: Inventory[];
   maxInventorySlots: number;
   adventures: IAdventure[];
-  currencies: Currencies;
+  currencies: Currency[];
+  createdAt: Date | string;
+  updatedAt: Date | string;
 }
 
 export type EquipmentSlotsArr = [
   {
-    slot: EquipmentSlot.ARMOR,
-    equipment: EquipableItem | null
+    slot: EquipmentSlot.ARMOR;
+    equipment: EquipableItem | null;
   },
   {
-    slot: EquipmentSlot.WEAPON,
-    equipment: EquipableItem | null
+    slot: EquipmentSlot.WEAPON;
+    equipment: EquipableItem | null;
   }
 ];
 
 export interface Inventory {
-  item: InventoryItem | null
+  _id?: Guid;
+  item: InventoryItem | null;
 }
 
 export enum CharacterActions {
