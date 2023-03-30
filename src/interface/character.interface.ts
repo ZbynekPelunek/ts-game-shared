@@ -1,24 +1,29 @@
 import { Guid } from 'guid-typescript';
 
 import { IAdventure } from './adventures.interface';
+import { AttributeType, CharacterAttribute } from './attribute.interface';
 import { Currency } from './currency.interface';
-import { EquipableItem, EquipmentSlot, InventoryItem, StatName } from './item.interface';
+import { Inventory } from './inventory.interface';
+import { EquipableItem, EquipmentSlot, StatName } from './item.interface';
 
 export interface ICharacter {
-  accountId: Guid | string;
-  _id: Guid | string;
+  accountId: Guid;
+  _id: Guid;
   name: string;
   level: number;
   currentExperience: number;
   maxExperience: number;
-  stats: CharacterStats;
+  attributes: CharacterAttribute[];
   equipmentSlots: EquipmentSlotsArr;
-  inventory: Inventory[];
-  maxInventorySlots: number;
-  adventures: IAdventure[];
+  inventoryId: Guid;
+  adventures: CharacterAdventure[];
   currencies: Currency[];
-  createdAt: Date | string;
-  updatedAt: Date | string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+interface CharacterAdventure {
+  adventureId: number;
 }
 
 export type EquipmentSlotsArr = [
@@ -31,11 +36,6 @@ export type EquipmentSlotsArr = [
     equipment: EquipableItem | null;
   }
 ];
-
-export interface Inventory {
-  _id?: Guid;
-  item: InventoryItem | null;
-}
 
 export enum CharacterActions {
   EQUIP_ITEM = 'EQUIP_ITEM',
@@ -54,31 +54,9 @@ export interface StatsParams {
   addedValue: number;
   totalValue: number;
   internalName: StatName;
-  type: StatType;
+  type: AttributeType;
   description?: string;
   percent?: boolean;
 }
 
-export interface CharacterStats {
-  Health: StatsParams;
-  Power: StatsParams;
-  Agility: StatsParams;
-  Strength: StatsParams;
-  Intellect: StatsParams;
-  Stamina: StatsParams;
-  Armor: StatsParams;
-  Min_Damage: StatsParams;
-  Max_Damage: StatsParams;
-  Crit_Rating: StatsParams;
-  Crit_Chance: StatsParams;
-  Crit_Power: StatsParams;
-  Percent_Damage_Increase: StatsParams;
-  Bonus_Experience: StatsParams;
-  Percent_Experience_Increase: StatsParams;
-}
-
-export enum StatType {
-  PRIMARY = 'PRIMARY',
-  SECONDARY = 'SECONDARY',
-  MISC = 'MISC'
-}
+export { Inventory };

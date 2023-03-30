@@ -1,5 +1,10 @@
+export enum CurrencyId {
+  GOLD,
+  CHEATING_CURRENCY
+}
+
 export interface Currency {
-  currencyId: number;
+  currencyId: CurrencyId;
   name: string;
   label: string;
   amount: number;
