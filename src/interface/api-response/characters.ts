@@ -1,12 +1,13 @@
 import { IAdventure } from '../adventures.interface';
-import { EquipmentSlotsArr, ICharacter } from '../character.interface';
+import { CharacterFrontend, EquipmentSlotsArr } from '../character/character.interface';
+import { Common_Response_Error, Common_Response_Error_unknown, Common_Response_Success } from './common';
 
-export interface GET_characterByID {
-  character: ICharacter
+export interface Characters_GET_one extends Common_Response_Success {
+  character: CharacterFrontend
 }
 
 export interface PUT_characterByID {
-  character: ICharacter
+  character: CharacterFrontend
 }
 
 export interface GET_characterAdventuresAll {
@@ -18,5 +19,7 @@ export interface GET_characterEquipSlots {
 }
 
 export interface POST_characterActions {
-  character: ICharacter
+  character: CharacterFrontend
 }
+
+export type Response_Characters_GET_one = Characters_GET_one | Common_Response_Error | Common_Response_Error_unknown;

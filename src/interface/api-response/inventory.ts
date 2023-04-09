@@ -1,8 +1,8 @@
-import { Guid } from 'guid-typescript';
+import { Types } from 'mongoose';
 
 export interface Response_Inventory_POST {
   succes: boolean;
   inventory: {
-    inventoryId: Guid;
+    inventoryId: Types.ObjectId;
   };
 }

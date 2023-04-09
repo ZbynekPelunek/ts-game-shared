@@ -1,5 +1,5 @@
-import { Guid } from 'guid-typescript';
+import { Types } from 'mongoose';
 
 export interface Response_Account_POST {
-  accountId: Guid;
+  accountId: Types.ObjectId;
 }

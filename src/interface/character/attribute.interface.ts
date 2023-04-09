@@ -1,8 +1,10 @@
-import { Guid } from 'guid-typescript';
+import { Types } from 'mongoose';
 
-interface BasicAtribute {
+export interface BasicAttribute {
   label: string;
-  desc: string;
+  attributeId: string;
+  type: string;
+  desc?: string;
   percent?: boolean;
 }
 
@@ -40,26 +42,27 @@ export enum MiscAttributeId {
   BONUS_DAMAGE_PERCENT = 'BONUS_DAMAGE_PERCENT'
 }
 
-interface PrimaryAttribute extends BasicAtribute {
+export interface PrimaryAttribute extends BasicAttribute {
   attributeId: PrimaryAttributeId;
   type: AttributeType.PRIMARY;
 }
 
-interface SecondaryAttribute extends BasicAtribute {
+export interface SecondaryAttribute extends BasicAttribute {
   attributeId: SecondaryAttributeId;
   type: AttributeType.SECONDARY;
 }
 
-interface MiscAttribute extends BasicAtribute {
+export interface MiscAttribute extends BasicAttribute {
   attributeId: MiscAttributeId;
   type: AttributeType.MISC;
 }
 
-export type Attribute = PrimaryAttribute | SecondaryAttribute | MiscAttribute;
-
 export interface CharacterAttribute {
-  characterId?: Guid;
+  _id: Types.ObjectId;
+  characterId: Types.ObjectId;
   attributeId: PrimaryAttributeId | SecondaryAttributeId | MiscAttributeId;
   'base-value': number;
   'added-value': number;
+  'stats-value': number;
+  'total-value': number;
 }

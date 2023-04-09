@@ -1,25 +1,34 @@
-import { Guid } from 'guid-typescript';
+import { Types } from 'mongoose';
 
-import { IAdventure } from './adventures.interface';
+import { EquipableItem, EquipmentSlot, StatName } from '../item.interface';
 import { AttributeType, CharacterAttribute } from './attribute.interface';
 import { Currency } from './currency.interface';
-import { Inventory } from './inventory.interface';
-import { EquipableItem, EquipmentSlot, StatName } from './item.interface';
+import { InventoryBackend } from './inventory.interface';
 
-export interface ICharacter {
-  accountId: Guid;
-  _id: Guid;
+export interface CommonCharacterParams {
   name: string;
   level: number;
   currentExperience: number;
   maxExperience: number;
-  attributes: CharacterAttribute[];
   equipmentSlots: EquipmentSlotsArr;
-  inventoryId: Guid;
   adventures: CharacterAdventure[];
   currencies: Currency[];
+}
+
+export interface CharacterBackend extends CommonCharacterParams {
+  _id: Types.ObjectId;
+  accountId: Types.ObjectId;
+  inventoryId: Types.ObjectId;
+  characterAttributes: Types.ObjectId[];
   createdAt: Date;
   updatedAt: Date;
+}
+
+export interface CharacterFrontend extends CommonCharacterParams {
+  characterId: string;
+  accountId: string;
+  inventoryId: string;
+  characterAttributes: string[];
 }
 
 interface CharacterAdventure {
@@ -59,4 +68,4 @@ export interface StatsParams {
   percent?: boolean;
 }
 
-export { Inventory };
+export { InventoryBackend as Inventory };

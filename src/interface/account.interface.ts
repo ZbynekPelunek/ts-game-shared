@@ -1,16 +1,14 @@
-import { Guid } from 'guid-typescript';
-
-import { AdventureResult } from './adventures.interface';
+import { Types } from 'mongoose';
 
 export interface Account {
-  _id: Guid;
+  _id: Types.ObjectId;
   username: string;
   email: string;
   password: string;
   level: number;
   createdAt: Date;
   updatedAt: Date;
-  characters: [{ _id: Guid }]
-  adventureResults: [{ _id: Guid }]
+  characters: [{ _id: Types.ObjectId }]
+  adventureResults: [{ _id: Types.ObjectId }]
   // adventureResults: AdventureResult[];
 }
