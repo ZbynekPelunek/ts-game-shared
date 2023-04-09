@@ -1,14 +1,20 @@
 import { Types } from 'mongoose';
 
-export interface Account {
-  _id: Types.ObjectId;
+export interface CommonAccountParams {
   username: string;
   email: string;
   password: string;
   level: number;
+}
+
+export interface AccountBackend extends CommonAccountParams {
+  _id: Types.ObjectId;
+  characters: [{ _id: Types.ObjectId }];
   createdAt: Date;
   updatedAt: Date;
-  characters: [{ _id: Types.ObjectId }]
-  adventureResults: [{ _id: Types.ObjectId }]
-  // adventureResults: AdventureResult[];
+}
+
+export interface AccountFrontend extends CommonAccountParams {
+  accountId: string;
+  characters: string[];
 }

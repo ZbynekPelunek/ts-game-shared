@@ -1,9 +1,7 @@
 import { Types } from 'mongoose';
 
-import { EquipableItem, EquipmentSlot, StatName } from '../item.interface';
-import { AttributeType, CharacterAttribute } from './attribute.interface';
+import { EquipableItem, EquipmentSlot } from '../item.interface';
 import { Currency } from './currency.interface';
-import { InventoryBackend } from './inventory.interface';
 
 export interface CommonCharacterParams {
   name: string;
@@ -51,21 +49,3 @@ export enum CharacterActions {
   UNEQUIP_ITEM = 'UNEQUIP_ITEM',
   SELL = 'SELL'
 }
-
-export interface Currencies {
-  gold: string;
-  cheating_currency: string;
-}
-
-export interface StatsParams {
-  label: string;
-  basicValue: number;
-  addedValue: number;
-  totalValue: number;
-  internalName: StatName;
-  type: AttributeType;
-  description?: string;
-  percent?: boolean;
-}
-
-export { InventoryBackend as Inventory };

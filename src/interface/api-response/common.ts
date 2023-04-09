@@ -6,10 +6,5 @@ export interface Common_Response_Success {
 
 export interface Common_Response_Error {
   success: false;
-  error: API_Response_Error[];
-}
-
-export interface Common_Response_Error_unknown {
-  success: false;
-  error: unknown;
+  error: API_Response_Error[] | unknown;
 }

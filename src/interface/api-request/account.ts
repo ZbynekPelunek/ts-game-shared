@@ -3,3 +3,10 @@ export interface Request_Account_POST {
   email: string;
   password: string;
 }
+
+export interface Request_Account_POST_Characters_params {
+  accountId: string;
+}
+export interface Request_Account_POST_Characters_body {
+  characterId: string;
+}

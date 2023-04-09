@@ -1,4 +1,3 @@
-import { Currencies } from './character/character.interface';
 import { InventoryItem } from './item.interface';
 
 export interface IAdventure {
@@ -10,7 +9,7 @@ export interface IAdventure {
   reward: {
     experience: number;
     items?: InventoryItem[];
-    currencies?: Currencies
+    //currencies?: Currencies
   };
   resultId?: string;
   timer?: AdventureTimer;

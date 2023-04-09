@@ -5,25 +5,34 @@ export interface BasicAttribute {
   attributeId: string;
   type: string;
   desc?: string;
-  percent?: boolean;
+  isPercent?: boolean;
+}
+
+export interface BasicAttributeBackend extends BasicAttribute {
+  createdAt?: Date;
+  updatedAt?: Date;
 }
 
 export enum AttributeType {
+  MAIN = 'MAIN',
   PRIMARY = 'PRIMARY',
   SECONDARY = 'SECONDARY',
   MISC = 'MISC'
 }
 
-export enum PrimaryAttributeId {
+export enum MainAttributeId {
   HEALTH = 'HEALTH',
   POWER = 'POWER',
-  AGILITY = 'AGILITY',
-  STRENGTH = 'STRENGTH',
-  INTELLECT = 'INTELLECT',
-  STAMINA = 'STAMINA',
   ARMOR = 'ARMOR',
   MIN_DAMAGE = 'MIN_DAMAGE',
   MAX_DAMAGE = 'MAX_DAMAGE'
+}
+
+export enum PrimaryAttributeId {
+  AGILITY = 'AGILITY',
+  STRENGTH = 'STRENGTH',
+  INTELLECT = 'INTELLECT',
+  STAMINA = 'STAMINA'
 }
 
 export enum SecondaryAttributeId {
@@ -42,6 +51,11 @@ export enum MiscAttributeId {
   BONUS_DAMAGE_PERCENT = 'BONUS_DAMAGE_PERCENT'
 }
 
+export interface MainAttribute extends BasicAttribute {
+  attributeId: MainAttributeId;
+  type: AttributeType.MAIN;
+}
+
 export interface PrimaryAttribute extends BasicAttribute {
   attributeId: PrimaryAttributeId;
   type: AttributeType.PRIMARY;
@@ -57,12 +71,22 @@ export interface MiscAttribute extends BasicAttribute {
   type: AttributeType.MISC;
 }
 
-export interface CharacterAttribute {
-  _id: Types.ObjectId;
-  characterId: Types.ObjectId;
-  attributeId: PrimaryAttributeId | SecondaryAttributeId | MiscAttributeId;
+export interface CommonCharacterAttributeParams {
+  attributeId: MainAttributeId | PrimaryAttributeId | SecondaryAttributeId | MiscAttributeId;
   'base-value': number;
   'added-value': number;
-  'stats-value': number;
+  'stats-added-value': number;
   'total-value': number;
 }
+
+export interface CharacterAttributeBackend extends CommonCharacterAttributeParams {
+  _id: Types.ObjectId;
+  characterId: Types.ObjectId;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface CharacterAttributeFrontend extends CommonCharacterAttributeParams {
+  characterAttributeId: string;
+  characterId: string;
+} 

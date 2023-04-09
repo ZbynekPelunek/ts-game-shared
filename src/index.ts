@@ -12,9 +12,13 @@ export * from './interface/character/character.interface';
 // API REQUEST
 export * from './interface/api-request/account';
 export * from './interface/api-request/attributes';
+export * from './interface/api-request/characterAttributes';
+export * from './interface/api-request/character';
+export * from './interface/api-request/inventories';
 
 // API RESPONSE
 export * from './interface/api-response/inventory';
 export * from './interface/api-response/characters';
 export * from './interface/api-response/account';
 export * from './interface/api-response/attributes';
+export * from './interface/api-response/characterAttributes';
