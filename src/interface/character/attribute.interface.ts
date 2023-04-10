@@ -2,25 +2,20 @@ import { Types } from 'mongoose';
 
 export interface BasicAttribute {
   label: string;
-  attributeId: string;
-  type: string;
+  attributeName: AttributeNames;
+  isPercent: boolean;
   desc?: string;
-  isPercent?: boolean;
+}
+
+export interface BasicAttributeFrontend extends BasicAttribute {
+  attributeId: string;
 }
 
 export interface BasicAttributeBackend extends BasicAttribute {
-  createdAt?: Date;
-  updatedAt?: Date;
+  _id: Types.ObjectId;
 }
 
-export enum AttributeType {
-  MAIN = 'MAIN',
-  PRIMARY = 'PRIMARY',
-  SECONDARY = 'SECONDARY',
-  MISC = 'MISC'
-}
-
-export enum MainAttributeId {
+export enum MainAttributeNames {
   HEALTH = 'HEALTH',
   POWER = 'POWER',
   ARMOR = 'ARMOR',
@@ -28,14 +23,14 @@ export enum MainAttributeId {
   MAX_DAMAGE = 'MAX_DAMAGE'
 }
 
-export enum PrimaryAttributeId {
+export enum PrimaryAttributeNames {
   AGILITY = 'AGILITY',
   STRENGTH = 'STRENGTH',
   INTELLECT = 'INTELLECT',
   STAMINA = 'STAMINA'
 }
 
-export enum SecondaryAttributeId {
+export enum SecondaryAttributeNames {
   CRIT_CHANCE_RATING = 'CRIT_CHANCE_RATING',
   CRIT_CHANCE_PERCENT = 'CRIT_CHANCE_PERCENT',
   CRIT_DAMAGE_RATING = 'CRIT_DAMAGE_RATING',
@@ -44,49 +39,35 @@ export enum SecondaryAttributeId {
   MULTRISTRIKE_CHANCE = 'MULTRISTRIKE_CHANCE'
 }
 
-export enum MiscAttributeId {
+export enum MiscAttributeNames {
   BONUS_EXPERIENCE_STATIC = 'BONUS_EXPERIENCE_STATIC',
   BONUS_EXPERIENCE_PERCENT = 'BONUS_EXPERIENCE_PERCENT',
   BONUS_HEALTH_PERCENT = 'BONUS_HEALTH_PERCENT',
   BONUS_DAMAGE_PERCENT = 'BONUS_DAMAGE_PERCENT'
 }
 
-export interface MainAttribute extends BasicAttribute {
-  attributeId: MainAttributeId;
-  type: AttributeType.MAIN;
-}
-
-export interface PrimaryAttribute extends BasicAttribute {
-  attributeId: PrimaryAttributeId;
-  type: AttributeType.PRIMARY;
-}
-
-export interface SecondaryAttribute extends BasicAttribute {
-  attributeId: SecondaryAttributeId;
-  type: AttributeType.SECONDARY;
-}
-
-export interface MiscAttribute extends BasicAttribute {
-  attributeId: MiscAttributeId;
-  type: AttributeType.MISC;
-}
+export type AttributeNames = MainAttributeNames | PrimaryAttributeNames | SecondaryAttributeNames | MiscAttributeNames;
 
 export interface CommonCharacterAttributeParams {
-  attributeId: MainAttributeId | PrimaryAttributeId | SecondaryAttributeId | MiscAttributeId;
   'base-value': number;
   'added-value': number;
   'stats-added-value': number;
   'total-value': number;
+  attribute?: BasicAttribute;
 }
 
 export interface CharacterAttributeBackend extends CommonCharacterAttributeParams {
-  _id: Types.ObjectId;
   characterId: Types.ObjectId;
-  createdAt: Date;
-  updatedAt: Date;
+  attributeId: Types.ObjectId;
+  _id?: Types.ObjectId;
 }
 
 export interface CharacterAttributeFrontend extends CommonCharacterAttributeParams {
   characterAttributeId: string;
   characterId: string;
-} 
+  attributeId: string;
+}
+
+export interface CharacterAttributeFrontendPopulated extends CharacterAttributeFrontend {
+  attribute: BasicAttribute;
+}

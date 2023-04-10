@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import { Types } from 'mongoose';
 
 import { CharacterAttributeFrontend } from '../character/attribute.interface';
 import { Common_Response_Error, Common_Response_Success } from './common';
@@ -8,9 +8,7 @@ export interface CharacterAttributes_GET_all extends Common_Response_Success {
 }
 
 export interface CharacterAttributes_POST extends Common_Response_Success {
-  characterAttributes: {
-    _id: mongoose.Types.ObjectId;
-  }[];
+  characterAttributes: Types.ObjectId[];
 }
 
 export type Response_CharacterAttributes_POST = CharacterAttributes_POST | Common_Response_Error;

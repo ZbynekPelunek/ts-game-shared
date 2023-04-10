@@ -1,7 +1,9 @@
 import { Types } from 'mongoose';
 
 import { EquipableItem, EquipmentSlot } from '../item.interface';
+import { CharacterAttributeBackend } from './attribute.interface';
 import { Currency } from './currency.interface';
+import { InventoryFrontend } from './inventory.interface';
 
 export interface CommonCharacterParams {
   name: string;
@@ -25,7 +27,7 @@ export interface CharacterBackend extends CommonCharacterParams {
 export interface CharacterFrontend extends CommonCharacterParams {
   characterId: string;
   accountId: string;
-  inventoryId: string;
+  inventoryId: string | InventoryFrontend;
   characterAttributes: string[];
 }
 

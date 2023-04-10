@@ -14,8 +14,6 @@ export interface InventoryBackend extends CommonInventoryParams {
   _id: Types.ObjectId;
   characterId: Types.ObjectId;
   'max-character-slot': number;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 export interface InventoryFrontend extends CommonInventoryParams {

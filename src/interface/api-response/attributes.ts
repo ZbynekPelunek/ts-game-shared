@@ -1,8 +1,8 @@
-import { BasicAttribute } from '../character/attribute.interface';
+import { BasicAttribute, BasicAttributeFrontend } from '../character/attribute.interface';
 import { Common_Response_Error, Common_Response_Success } from './common';
 
 export interface Attributes_GET_all extends Common_Response_Success {
-  attributes: BasicAttribute[];
+  attributes: BasicAttributeFrontend[];
 }
 
 export interface Attributes_GET_one extends Common_Response_Success {
