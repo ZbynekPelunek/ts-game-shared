@@ -1,5 +1,3 @@
-import { InventoryItem } from './item.interface';
-
 export interface IAdventure {
   adventureId: string;
   name: string;
@@ -8,7 +6,7 @@ export interface IAdventure {
   adventureState: AdventureState;
   reward: {
     experience: number;
-    items?: InventoryItem[];
+    items?: string[];
     //currencies?: Currencies
   };
   resultId?: string;

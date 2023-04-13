@@ -13,7 +13,6 @@ export interface CommonInventoryParams {
 export interface InventoryBackend extends CommonInventoryParams {
   _id: Types.ObjectId;
   characterId: Types.ObjectId;
-  'max-character-slot': number;
 }
 
 export interface InventoryFrontend extends CommonInventoryParams {

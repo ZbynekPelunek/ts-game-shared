@@ -1,4 +1,4 @@
-import { InventoryFrontend } from '../character/inventory.interface';
+import { InventoryFrontend } from '../character/inventories.interface';
 import { Common_Response_Error, Common_Response_Success } from './common';
 
 export interface Inventories_GET_one extends Common_Response_Success {
