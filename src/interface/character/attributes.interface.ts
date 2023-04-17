@@ -49,10 +49,10 @@ export enum MiscAttributeNames {
 export type AttributeNames = MainAttributeNames | PrimaryAttributeNames | SecondaryAttributeNames | MiscAttributeNames;
 
 export interface CommonCharacterAttributeParams {
-  'base-value': number;
-  'added-value': number;
-  'stats-added-value': number;
-  'total-value': number;
+  baseValue: number;
+  addedValue: number;
+  statsAddedValue: number;
+  totalValue: number;
   attribute?: BasicAttribute;
 }
 

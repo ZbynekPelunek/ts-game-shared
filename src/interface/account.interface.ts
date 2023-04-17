@@ -8,10 +8,8 @@ export interface CommonAccountParams {
 }
 
 export interface AccountBackend extends CommonAccountParams {
-  _id: Types.ObjectId;
-  characters: [{ _id: Types.ObjectId }];
-  createdAt: Date;
-  updatedAt: Date;
+  _id?: Types.ObjectId;
+  characters: Types.ObjectId[];
 }
 
 export interface AccountFrontend extends CommonAccountParams {

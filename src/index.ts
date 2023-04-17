@@ -14,10 +14,10 @@ export * from './interface/api-request/accounts';
 export * from './interface/api-request/attributes';
 export * from './interface/api-request/characterAttributes';
 export * from './interface/api-request/characters';
-export * from './interface/api-request/inventories';
+export * from './interface/api-request/inventoryItems';
 
 // API RESPONSE
-export * from './interface/api-response/inventories';
+export * from './interface/api-response/inventoryItems';
 export * from './interface/api-response/characters';
 export * from './interface/api-response/accounts';
 export * from './interface/api-response/attributes';
