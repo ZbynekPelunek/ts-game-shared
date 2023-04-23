@@ -1,5 +1,6 @@
 import { Types } from 'mongoose';
 
+import { CharacterCurrencyFrontend } from './currencies.interface';
 import { InventoryItemFrontend } from './inventoryItems.interface';
 
 export interface CommonCharacterParams {
@@ -15,7 +16,7 @@ export interface CharacterBackend extends CommonCharacterParams {
   inventory: Types.ObjectId[];
   characterAttributes: Types.ObjectId[];
   adventures: Types.ObjectId[];
-  currencies: Types.ObjectId[];
+  currencyIds: Types.ObjectId[];
   equipment: Types.ObjectId[];
   maxInventorySlot: number;
 }
@@ -26,9 +27,10 @@ export interface CharacterFrontend extends CommonCharacterParams {
   inventory: string[] | null[];
   characterAttributes: string[];
   adventures: string[];
-  currencies: string[];
+  currencyIds: string[];
   equipment: string[];
   inventoryItems?: InventoryItemFrontend[];
+  currencies?: CharacterCurrencyFrontend[];
 }
 
 // export type EquipmentSlotsArr = [

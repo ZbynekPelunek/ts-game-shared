@@ -1,12 +1,30 @@
+import { Types } from 'mongoose';
+
 export enum CurrencyId {
   GOLD,
   CHEATING_CURRENCY
 }
 
 export interface Currency {
-  currencyId: CurrencyId;
+  _id: CurrencyId;
   name: string;
   label: string;
-  amount: number;
+  desc?: string;
   cap?: number;
+}
+
+export interface CommonCharacterCurrencyParams {
+  currencyId: CurrencyId;
+  amount: number;
+}
+
+export interface CharacterCurrencyBackend extends CommonCharacterCurrencyParams {
+  _id?: Types.ObjectId;
+  characterId: Types.ObjectId;
+}
+
+export interface CharacterCurrencyFrontend extends CommonCharacterCurrencyParams {
+  characterCurrencyId: string;
+  characterId: string;
+  currency?: Currency;
 }
