@@ -8,6 +8,7 @@ export * from './interface/character/currencies.interface';
 export * from './interface/character/attributes.interface';
 export * from './interface/character/characters.interface';
 export * from './interface/character/inventoryItems.interface';
+export * from './interface/character/equipmentItems.interface';
 
 // API REQUEST
 export * from './interface/api-request/accounts';
