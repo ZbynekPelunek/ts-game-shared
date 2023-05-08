@@ -10,6 +10,9 @@ export enum EquipmentSlot {
   OFF_HAND = 'OFF_HAND'
 }
 
+export type EquipmentArmor = EquipmentSlot.HEAD | EquipmentSlot.SHOULDER | EquipmentSlot.CHEST | EquipmentSlot.HANDS | EquipmentSlot.LEGS | EquipmentSlot.OFF_HAND;
+export type EquipmentWeapon = EquipmentSlot.MAIN_HAND | EquipmentSlot.OFF_HAND;
+
 export type UiPostition = 'left' | 'right' | 'bottom';
 
 export interface CommonEquipmentItemParams {

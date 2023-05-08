@@ -2,6 +2,7 @@ export * from './interface/account.interface';
 export * from './interface/error.interface';
 export * from './interface/adventures.interface';
 export * from './interface/fortune.interface';
+export * from './interface/item.interface';
 
 // CHARACTER
 export * from './interface/character/currencies.interface';

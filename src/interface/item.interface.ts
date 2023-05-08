@@ -1,94 +1,71 @@
-// interface IItem {
-//   itemId: string;
-//   name: string;
-//   equipped: boolean;
-//   sellValue: string;
-//   positionIndex?: number;
-//   quality?: ItemQuality;
-//   itemLevel?: number;
-//   levelReq?: number;
-// }
+import { AttributeName } from './character/attributes.interface';
+import { EquipmentArmor, EquipmentWeapon } from './character/equipmentItems.interface';
 
-// export interface IPotion extends IItem {
-//   itemType: ItemType.POTION,
-//   maxStack: number;
-//   stats: ItemStat[];
-// }
+interface CommonItemParams {
+  name: string;
+  equipped: boolean;
+  sellValue: number;
+  maxStack: number;
+  quality: ItemQuality;
+  itemLevel: number;
+  levelReq: number;
+  shopItem: boolean;
+}
 
-// interface IEquipment extends IItem {
-//   itemType: ItemType.EQUIPMENT;
-//   statsEffects: {
-//     default: ItemStat[];
-//     rolledAffixes: ItemStat[];
-//   }
-// }
+export enum ItemQuality {
+  COMMON = 'COMMON',
+  UNCOMMON = 'UNCOMMON',
+  RARE = 'RARE',
+  EPIC = 'EPIC',
+  LEGENDARY = 'LEGENDARY'
+}
 
-// export interface IArmor extends IEquipment {
-//   slot: EquipmentSlot.ARMOR;
-//   Armor: number;
-//   armorType: ArmorType,
-// }
+export interface Potion extends CommonItemParams {
+  itemType: ItemType.POTION,
+  attributes: ItemAttribute[];
+}
 
-// export interface IWeapon extends IEquipment {
-//   slot: EquipmentSlot.WEAPON;
-//   Min_Damage: number;
-//   Max_Damage: number;
-//   weaponType: WeaponType;
-// }
+interface Equipment extends CommonItemParams {
+  itemType: ItemType.EQUIPMENT;
+  attributes: ItemAttribute[];
+}
 
-// export type EquipableItem = IArmor | IWeapon;
-// export type InventoryItem = EquipableItem | IPotion;
+export interface Armor extends Equipment {
+  slot: EquipmentArmor;
+  equipmentType: ArmorType,
+}
 
-// export enum ItemType {
-//   EQUIPMENT = 'EQUIPMENT',
-//   POTION = 'POTION'
-// }
+export interface Weapon extends Equipment {
+  slot: EquipmentWeapon;
+  equipmentType: WeaponType;
+}
 
-// export enum ItemQuality {
-//   COMMON = 'COMMON',
-//   UNCOMMON = 'UNCOMMON',
-//   RARE = 'RARE',
-//   EPIC = 'EPIC',
-//   LEGENDARY = 'LEGENDARY'
-// }
+export type EquipableItem = Armor | Weapon;
+export type InventoryItem = EquipableItem | Potion;
 
-// export enum ArmorType {
-//   CLOTH = 'CLOTH',
-//   LEATHER = 'LEATHER',
-//   PLATE = 'PLATE'
-// }
+export enum ItemType {
+  EQUIPMENT = 'EQUIPMENT',
+  POTION = 'POTION'
+}
 
-// export enum WeaponType {
-//   STAFF = 'STAFF',
-//   BOW = 'BOW',
-//   AXE = 'AXE'
-// }
+export enum ArmorType {
+  CLOTH = 'CLOTH',
+  LEATHER = 'LEATHER',
+  PLATE = 'PLATE'
+}
 
-// export enum EquipmentSlot {
-//   WEAPON = 'WEAPON',
-//   ARMOR = 'ARMOR'
-// }
+export enum WeaponType {
+  SWORD_1HAND = 'SWORD_1HAND',
+  SWORD_2HAND = 'SWORD_2HAND',
+  STAFF = 'STAFF',
+  BOW = 'BOW',
+  AXE_1HAND = 'AXE_1HAND',
+  AXE_2HAND = 'AXE_2HAND',
+}
 
-// export interface ItemStat {
-//   statName: StatName;
-//   statValue: number;
-// }
+export interface ItemAttribute {
+  attributeName: AttributeName;
+  attributeMinValue: number;
+  attributeMaxValue: number;
+}
 
-// export enum StatName {
-//   HEALTH = 'HEALTH',
-//   POWER = 'POWER',
-//   STAMINA = 'STAMINA',
-//   AGILITY = 'AGILITY',
-//   STRENGTH = 'STRENGTH',
-//   INTELLECT = 'INTELLECT',
-//   ARMOR = 'ARMOR',
-//   MIN_DAMAGE = 'MIN_DAMAGE',
-//   MAX_DAMAGE = 'MAX_DAMAGE',
-//   CRIT_CHANCE_RATING = 'CRIT_CHANCE_RATING',
-//   PERCENT_CRIT_CHANCE = 'PERCENT_CRIT_CHANCE',
-//   PERCENT_CRIT_DAMAGE = 'PERCENT_CRIT_DAMAGE',
-//   BONUS_EXPERIENCE = 'BONUS_EXPERIENCE',
-//   PERCENT_EXPERIENCE = 'PERCENT_EXPERIENCE',
-//   PERCENT_HEALTH = 'PERCENT_HEALTH',
-//   PERCENT_DAMAGE = 'PERCENT_DAMAGE'
-// }

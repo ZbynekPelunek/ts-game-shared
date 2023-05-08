@@ -2,7 +2,7 @@ import { Types } from 'mongoose';
 
 export interface BasicAttribute {
   label: string;
-  attributeName: AttributeNames;
+  attributeName: AttributeName;
   isPercent: boolean;
   desc?: string;
 }
@@ -23,14 +23,14 @@ export enum MainAttributeNames {
   MAX_DAMAGE = 'MAX_DAMAGE'
 }
 
-export enum PrimaryAttributeNames {
+export enum PrimaryAttributeName {
   AGILITY = 'AGILITY',
   STRENGTH = 'STRENGTH',
   INTELLECT = 'INTELLECT',
   STAMINA = 'STAMINA'
 }
 
-export enum SecondaryAttributeNames {
+export enum SecondaryAttributeName {
   CRIT_CHANCE_RATING = 'CRIT_CHANCE_RATING',
   CRIT_CHANCE_PERCENT = 'CRIT_CHANCE_PERCENT',
   CRIT_DAMAGE_RATING = 'CRIT_DAMAGE_RATING',
@@ -39,14 +39,14 @@ export enum SecondaryAttributeNames {
   MULTRISTRIKE_CHANCE = 'MULTRISTRIKE_CHANCE'
 }
 
-export enum MiscAttributeNames {
+export enum MiscAttributeName {
   BONUS_EXPERIENCE_STATIC = 'BONUS_EXPERIENCE_STATIC',
   BONUS_EXPERIENCE_PERCENT = 'BONUS_EXPERIENCE_PERCENT',
   BONUS_HEALTH_PERCENT = 'BONUS_HEALTH_PERCENT',
   BONUS_DAMAGE_PERCENT = 'BONUS_DAMAGE_PERCENT'
 }
 
-export type AttributeNames = MainAttributeNames | PrimaryAttributeNames | SecondaryAttributeNames | MiscAttributeNames;
+export type AttributeName = MainAttributeNames | PrimaryAttributeName | SecondaryAttributeName | MiscAttributeName;
 
 export interface CommonCharacterAttributeParams {
   baseValue: number;
