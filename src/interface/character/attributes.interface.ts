@@ -23,14 +23,14 @@ export enum MainAttributeNames {
   MAX_DAMAGE = 'MAX_DAMAGE'
 }
 
-export enum PrimaryAttributeName {
+export enum PrimaryAttributeNames {
   AGILITY = 'AGILITY',
   STRENGTH = 'STRENGTH',
   INTELLECT = 'INTELLECT',
   STAMINA = 'STAMINA'
 }
 
-export enum SecondaryAttributeName {
+export enum SecondaryAttributeNames {
   CRIT_CHANCE_RATING = 'CRIT_CHANCE_RATING',
   CRIT_CHANCE_PERCENT = 'CRIT_CHANCE_PERCENT',
   CRIT_DAMAGE_RATING = 'CRIT_DAMAGE_RATING',
@@ -39,14 +39,14 @@ export enum SecondaryAttributeName {
   MULTRISTRIKE_CHANCE = 'MULTRISTRIKE_CHANCE'
 }
 
-export enum MiscAttributeName {
+export enum MiscAttributeNames {
   BONUS_EXPERIENCE_STATIC = 'BONUS_EXPERIENCE_STATIC',
   BONUS_EXPERIENCE_PERCENT = 'BONUS_EXPERIENCE_PERCENT',
   BONUS_HEALTH_PERCENT = 'BONUS_HEALTH_PERCENT',
   BONUS_DAMAGE_PERCENT = 'BONUS_DAMAGE_PERCENT'
 }
 
-export type AttributeName = MainAttributeNames | PrimaryAttributeName | SecondaryAttributeName | MiscAttributeName;
+export type AttributeName = MainAttributeNames | PrimaryAttributeNames | SecondaryAttributeNames | MiscAttributeNames;
 
 export interface CommonCharacterAttributeParams {
   baseValue: number;
