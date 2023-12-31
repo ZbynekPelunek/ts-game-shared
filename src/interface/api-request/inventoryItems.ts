@@ -1,9 +1,19 @@
-import { Types } from 'mongoose';
-
-export interface Request_Inventories_GET_one_params {
-  inventoryId: string;
+export interface Request_Inventories_GET_all_query {
+  characterId: string;
 }
 
 export interface Request_Inventories_POST_body {
-  characterId: Types.ObjectId;
+  characterId: string;
+  maxInventorySlot: number;
+}
+
+export interface Request_Inventories_POST_item_param {
+  slot: number;
+}
+
+export interface Request_Inventories_POST_item_body {
+  characterId: string;
+  itemId: number;
+  amount: number;
+  previousItemSlot?: number;
 }

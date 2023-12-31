@@ -1,9 +1,12 @@
+import { Types } from 'mongoose';
+
 export interface CommonItemParams {
+  itemId: number;
   name: string;
   itemType: ItemType;
+  maxAmount: number;
   sellValue?: number;
   quality?: ItemQuality;
-  maxStack?: number;
   icon?: string;
 }
 

@@ -2,16 +2,15 @@ import { AttributeName, MainAttributeNames } from './character/attributes.interf
 import { EquipmentArmor, EquipmentSlot, EquipmentWeapon } from './character/equipmentItems.interface';
 import { CommonItemParams, ItemQuality } from './item.interface';
 
-interface CommonEquipmentItemParams extends CommonItemParams {
+export interface CommonItemsEquipmenParams extends CommonItemParams {
   itemLevel: number;
   attributes: [ItemAttribute, ...ItemAttribute[]];
   slot: EquipmentSlot;
   equipmentType: ArmorType | WeaponType;
-  setId?: number; //NYI
+  setId?: number;
   isShopItem?: boolean;
   maxItemLevel?: number;
   levelReq?: number;
-  _id?: number;
 }
 
 interface RequiredArmorItemAttribute extends ItemAttribute {
@@ -19,7 +18,7 @@ interface RequiredArmorItemAttribute extends ItemAttribute {
   requiredQuality: ItemQuality.COMMON
 }
 
-export interface Armor extends CommonEquipmentItemParams {
+export interface Armor extends CommonItemsEquipmenParams {
   attributes: [RequiredArmorItemAttribute, ...ItemAttribute[]];
   equipmentType: ArmorType;
   slot: EquipmentArmor;
@@ -36,19 +35,19 @@ interface RequiredWeaponItemAttribute_2 extends ItemAttribute {
 }
 
 
-export interface Weapon extends CommonEquipmentItemParams {
+export interface Weapon extends CommonItemsEquipmenParams {
   attributes: [RequiredWeaponItemAttribute_1, RequiredWeaponItemAttribute_2, ...ItemAttribute[]];
   equipmentType: WeaponType;
   slot: EquipmentWeapon;
 }
 
-export interface EquipmentItemBackend extends CommonEquipmentItemParams {
-  _id: number;
-}
+// export interface ItemsEquipmentBackend extends CommonItemsEquipmenParams {
+//   _id: number;
+// }
 
-export interface EquipmentItemFrontend extends CommonEquipmentItemParams {
-  equipmentItemId: number;
-}
+// export interface ItemsEquipmentFrontend extends CommonItemsEquipmenParams {
+//   itemId: number;
+// }
 
 export enum ArmorType {
   CLOTH = 'CLOTH',

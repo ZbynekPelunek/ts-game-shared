@@ -1,7 +1,7 @@
 import { Types } from 'mongoose';
 
 import { CharacterCurrencyFrontend } from './currencies.interface';
-import { InventoryItemFrontend } from './inventoryItems.interface';
+import { InventoryItemBackend, InventoryItemFrontend } from './inventoryItems.interface';
 
 export interface CommonCharacterParams {
   name: string;
@@ -13,7 +13,7 @@ export interface CommonCharacterParams {
 export interface CharacterBackend extends CommonCharacterParams {
   _id?: Types.ObjectId;
   accountId: Types.ObjectId;
-  inventory: Types.ObjectId[];
+  inventory: InventoryItemBackend[];
   characterAttributes: Types.ObjectId[];
   adventures: Types.ObjectId[];
   currencyIds: Types.ObjectId[];
@@ -24,12 +24,11 @@ export interface CharacterBackend extends CommonCharacterParams {
 export interface CharacterFrontend extends CommonCharacterParams {
   characterId: string;
   accountId: string;
-  inventory: string[] | null[];
+  inventory: InventoryItemFrontend[];
   characterAttributes: string[];
   adventures: string[];
   currencyIds: string[];
   equipment: string[];
-  inventoryItems?: InventoryItemFrontend[];
   currencies?: CharacterCurrencyFrontend[];
 }
 
