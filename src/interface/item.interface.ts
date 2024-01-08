@@ -1,5 +1,3 @@
-import { Types } from 'mongoose';
-
 export interface CommonItemParams {
   itemId: number;
   name: string;
