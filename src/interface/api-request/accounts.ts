@@ -1,4 +1,4 @@
-export interface Request_Account_POST {
+export interface Request_Account_POST_body {
   username: string;
   email: string;
   password: string;

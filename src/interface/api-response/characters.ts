@@ -13,6 +13,7 @@ export interface Characters_GET_one extends Common_Response_Success {
 export interface Characters_POST extends Common_Response_Success {
   character: {
     characterId: string;
+    name: string;
   }
 }
 

@@ -3,6 +3,8 @@ import { Common_Response_Error, Common_Response_Success } from './common';
 export interface Accounts_POST extends Common_Response_Success {
   account: {
     accountId: string;
+    email: string;
+    username: string;
   }
 }
 
