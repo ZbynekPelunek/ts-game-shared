@@ -5,20 +5,20 @@ import { InventoryItemBackend, InventoryItemFrontend } from './inventoryItems.in
 
 export interface CommonCharacterParams {
   name: string;
-  level: number;
-  currentExperience: number;
-  maxExperience: number;
+  level?: number;
+  currentExperience?: number;
+  maxExperience?: number;
 }
 
 export interface CharacterBackend extends CommonCharacterParams {
   _id?: Types.ObjectId;
   accountId: Types.ObjectId;
-  inventory: InventoryItemBackend[];
-  characterAttributes: Types.ObjectId[];
-  adventures: Types.ObjectId[];
-  currencyIds: Types.ObjectId[];
-  equipment: Types.ObjectId[];
-  maxInventorySlot: number;
+  inventory?: InventoryItemBackend[];
+  characterAttributes?: Types.ObjectId[];
+  adventures?: Types.ObjectId[];
+  currencyIds?: Types.ObjectId[];
+  equipment?: Types.ObjectId[];
+  maxInventorySlot?: number;
 }
 
 export interface CharacterFrontend extends CommonCharacterParams {
