@@ -12,5 +12,6 @@ export interface InventoryItemBackend extends CommonInventoryItemParams {
 }
 
 export interface InventoryItemFrontend extends CommonInventoryItemParams {
+  inventoryItemId: string;
   characterId: string;
 }

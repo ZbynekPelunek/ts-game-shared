@@ -4,6 +4,7 @@ export * from './interface/adventures.interface';
 export * from './interface/fortune.interface';
 export * from './interface/item.interface';
 export * from './interface/itemsEquipment';
+export * from './interface/apiAddress';
 
 // CHARACTER
 export * from './interface/character/currencies.interface';
@@ -20,6 +21,7 @@ export * from './interface/api-request/characterCurrencies';
 export * from './interface/api-request/characters';
 export * from './interface/api-request/inventoryItems';
 export * from './interface/api-request/characterEquipment';
+export * from './interface/api-request/items';
 
 // API RESPONSE
 export * from './interface/api-response/inventoryItems';
@@ -29,3 +31,4 @@ export * from './interface/api-response/attributes';
 export * from './interface/api-response/characterAttributes';
 export * from './interface/api-response/characterCurrencies';
 export * from './interface/api-response/characterEquipment';
+export * from './interface/api-response/items';

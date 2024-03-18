@@ -1,5 +1,9 @@
 export interface Request_Inventories_GET_all_query {
-  characterId: string;
+  characterId?: string;
+}
+
+export interface Request_Inventories_GET_item_param {
+  inventoryItemId: string;
 }
 
 export interface Request_Inventories_POST_body {

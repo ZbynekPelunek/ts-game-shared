@@ -2,7 +2,7 @@ export interface CommonItemParams {
   itemId: number;
   name: string;
   itemType: ItemType;
-  maxAmount: number;
+  maxAmount?: number;
   sellValue?: number;
   quality?: ItemQuality;
   icon?: string;
