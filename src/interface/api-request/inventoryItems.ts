@@ -8,16 +8,17 @@ export interface Request_Inventories_GET_item_param {
 
 export interface Request_Inventories_POST_body {
   characterId: string;
-  maxInventorySlot: number;
-}
-
-export interface Request_Inventories_POST_item_param {
   slot: number;
+  itemId?: number | null;
 }
 
-export interface Request_Inventories_POST_item_body {
-  characterId: string;
-  itemId: number;
-  amount: number;
+export interface Request_Inventories_PATCH_param {
+  inventoryItemId: string;
+}
+
+export interface Request_Inventories_PATCH_body {
+  characterId?: string;
+  itemId?: number;
+  amount?: number;
   previousItemSlot?: number;
 }
