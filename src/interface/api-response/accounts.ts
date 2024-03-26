@@ -8,11 +8,11 @@ export interface Accounts_POST extends Common_Response_Success {
   }
 }
 
-export interface Accounts_POST_Characters extends Common_Response_Success {
+export interface Accounts_PATCH extends Common_Response_Success {
   account: {
     accountId: string;
   }
 }
 
 export type Response_Account_POST = Accounts_POST | Common_Response_Error;
-export type Response_Account_POST_Characters = Accounts_POST_Characters | Common_Response_Error;
+export type Response_Account_PATCH = Accounts_PATCH | Common_Response_Error;

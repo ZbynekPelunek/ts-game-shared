@@ -4,9 +4,10 @@ export interface Request_Account_POST_body {
   password: string;
 }
 
-export interface Request_Account_POST_Characters_params {
+export interface Request_Account_PATCH_params {
   accountId: string;
 }
-export interface Request_Account_POST_Characters_body {
+
+export interface Request_Account_PATCH_body {
   characterId: string;
 }

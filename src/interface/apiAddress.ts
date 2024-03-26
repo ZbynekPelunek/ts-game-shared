@@ -1,4 +1,4 @@
-export enum Paths {
+export enum BasePaths {
   INTERNAL = 'api/internal',
   PUBLIC = 'api/v1'
 }
@@ -13,5 +13,6 @@ export enum ApiRoutes {
   CHARACTER_ATTRIBUTES = 'character-attributes',
   CHARACTER_CURRENCIES = 'character-currencies',
   CHARACTER_EQUIPMENT = 'character-equipment',
-  ITEMS = 'items'
+  ITEMS = 'items',
+  REWARDS = 'rewards'
 }
