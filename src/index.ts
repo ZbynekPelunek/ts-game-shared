@@ -1,41 +1,57 @@
-export * from './interface/account.interface';
-export * from './interface/error.interface';
-export * from './interface/fortune.interface';
-export * from './interface/item.interface';
-export * from './interface/itemsEquipment';
-export * from './interface/apiAddress';
+//API
+export * from './interface/API/apiAddress';
+export * from './interface/API/error';
+
+// ACCOUNT
+export * from './interface/account/account';
+export * from './interface/account/apiRequest';
+export * from './interface/account/apiResponse';
 
 // ADVENTURE
-export * from './interface/adventure/adventure.interface';
-export * from './interface/adventure/reward.interface';
+export * from './interface/adventure/adventure';
+export * from './interface/adventure/apiRequest';
+export * from './interface/adventure/apiResponse';
+
+// ATTRIBUTE
+export * from './interface/attribute/attribute';
+export * from './interface/attribute/apiRequest';
+export * from './interface/attribute/apiResponse';
 
 // CHARACTER
-export * from './interface/character/currencies.interface';
-export * from './interface/character/attributes.interface';
-export * from './interface/character/characters.interface';
-export * from './interface/character/inventoryItems.interface';
-export * from './interface/character/equipmentItems.interface';
+export * from './interface/character/character';
+export * from './interface/character/apiRequest';
+export * from './interface/character/apiResponse';
 
-// API REQUEST
-export * from './interface/api-request/adventures';
-export * from './interface/api-request/accounts';
-export * from './interface/api-request/attributes';
-export * from './interface/api-request/characterAttributes';
-export * from './interface/api-request/characterCurrencies';
-export * from './interface/api-request/characters';
-export * from './interface/api-request/inventoryItems';
-export * from './interface/api-request/characterEquipment';
-export * from './interface/api-request/items';
-export * from './interface/api-request/rewards';
+// CHARACTER ATTRIBUTE
+export * from './interface/character/characterAttribute/characterAttribute';
+export * from './interface/character/characterAttribute/apiRequest';
+export * from './interface/character/characterAttribute/apiResponse';
 
-// API RESPONSE
-export * from './interface/api-response/adventures';
-export * from './interface/api-response/inventoryItems';
-export * from './interface/api-response/characters';
-export * from './interface/api-response/accounts';
-export * from './interface/api-response/attributes';
-export * from './interface/api-response/characterAttributes';
-export * from './interface/api-response/characterCurrencies';
-export * from './interface/api-response/characterEquipment';
-export * from './interface/api-response/items';
-export * from './interface/api-response/rewards';
+// CHARACTER CURRENCY
+export * from './interface/character/characterCurrency/characterCurrency';
+export * from './interface/character/characterCurrency/apiRequest';
+export * from './interface/character/characterCurrency/apiResponse';
+
+// CHARACTER EQUIPMENT
+export * from './interface/character/characterEquipment/characterEquipment';
+export * from './interface/character/characterEquipment/apiRequest';
+export * from './interface/character/characterEquipment/apiResponse';
+
+// CURRENCY
+export * from './interface/currency/currency';
+
+// INVENTORY
+export * from './interface/character/inventory/inventory';
+export * from './interface/character/inventory/apiRequest';
+export * from './interface/character/inventory/apiResponse';
+
+// ITEM
+export * from './interface/item/item';
+export * from './interface/item/Equipment';
+export * from './interface/item/apiRequest';
+export * from './interface/item/apiResponse';
+
+//REWARD
+export * from './interface/reward/reward';
+export * from './interface/reward/apiRequest';
+export * from './interface/reward/apiResponse';
