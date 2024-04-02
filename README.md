@@ -28,7 +28,7 @@ This part contains all interfaces that could be required in both Frontend and Ba
 Clone this repository to the same folder as Frontend and Backend
 
 ```bash
-git clone https://github.com/zbynekpelunek/ts-game-frontend
+git clone https://github.com/zbynekpelunek/ts-game-shared
 ```
 
 ## Status

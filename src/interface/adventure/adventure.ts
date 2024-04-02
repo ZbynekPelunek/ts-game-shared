@@ -1,7 +1,7 @@
 import { Reward } from '../reward/reward';
 
 export interface Adventure {
-  adventureId: number;
+  _id: number;
   name: string;
   level: number;
   timeInSeconds: number;
