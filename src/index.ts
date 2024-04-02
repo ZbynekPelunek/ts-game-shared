@@ -40,6 +40,11 @@ export * from './interface/character/characterEquipment/apiResponse';
 // CURRENCY
 export * from './interface/currency/currency';
 
+// ENEMY
+export * from './interface/enemy/enemy';
+export * from './interface/enemy/apiRequest';
+export * from './interface/enemy/apiResponse';
+
 // INVENTORY
 export * from './interface/character/inventory/inventory';
 export * from './interface/character/inventory/apiRequest';
