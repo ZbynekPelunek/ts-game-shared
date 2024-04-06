@@ -1,18 +1,11 @@
-import { Types } from 'mongoose';
-
-export interface CommonAccountParams {
+export interface IAccountSchema {
   username: string;
   email: string;
   password: string;
+  level?: number;
+}
+
+export interface Account extends IAccountSchema {
+  id: string;
   level: number;
-}
-
-export interface AccountBackend extends CommonAccountParams {
-  _id?: Types.ObjectId;
-  characters: Types.ObjectId[];
-}
-
-export interface AccountFrontend extends CommonAccountParams {
-  accountId: string;
-  characters: string[];
 }

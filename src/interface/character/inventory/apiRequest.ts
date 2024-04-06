@@ -1,3 +1,5 @@
+import { InventoryActions } from './inventory';
+
 export interface Request_Inventory_GET_all_query {
   characterId?: string;
 }
@@ -6,9 +8,13 @@ export interface Request_Inventory_GET_item_param {
   inventoryId: string;
 }
 
+export interface Request_Inventory_POST_query {
+  action?: InventoryActions;
+}
+
 export interface Request_Inventory_POST_body {
   characterId: string;
-  slot: number;
+  slot?: number;
   itemId?: number | null;
 }
 

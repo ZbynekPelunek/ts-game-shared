@@ -1,3 +1,7 @@
+export interface Request_Character_GET_all_query {
+  accountId?: string;
+}
+
 export interface Request_Character_GET_one_params {
   characterId: string;
 }

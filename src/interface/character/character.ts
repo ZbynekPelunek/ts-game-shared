@@ -8,6 +8,7 @@ export interface CommonCharacterParams {
   level?: number;
   currentExperience?: number;
   maxExperience?: number;
+  adventures?: number[];
 }
 
 export interface CharacterBackend extends CommonCharacterParams {
@@ -15,7 +16,6 @@ export interface CharacterBackend extends CommonCharacterParams {
   accountId: Types.ObjectId;
   inventory?: InventoryBackend[];
   characterAttributes?: Types.ObjectId[];
-  adventures?: Types.ObjectId[];
   currencyIds?: Types.ObjectId[];
   equipment?: Types.ObjectId[];
   maxInventorySlot?: number;
@@ -26,7 +26,6 @@ export interface CharacterFrontend extends CommonCharacterParams {
   accountId: string;
   inventory: InventoryFrontend[];
   characterAttributes: string[];
-  adventures: string[];
   currencyIds: string[];
   equipment: string[];
   currencies?: CharacterCurrencyFrontend[];
