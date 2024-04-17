@@ -1,4 +1,4 @@
-//API
+// API
 export * from './interface/API/apiAddress';
 export * from './interface/API/error';
 
@@ -56,7 +56,12 @@ export * from './interface/item/Equipment';
 export * from './interface/item/apiRequest';
 export * from './interface/item/apiResponse';
 
-//REWARD
+// RESULT
+export * from './interface/result/result';
+export * from './interface/result/apiRequest';
+export * from './interface/result/apiResponse';
+
+// REWARD
 export * from './interface/reward/reward';
 export * from './interface/reward/apiRequest';
 export * from './interface/reward/apiResponse';

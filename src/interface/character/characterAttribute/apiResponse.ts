@@ -1,8 +1,8 @@
 import { Common_Response_Error, Common_Response_Success } from '../../API/commonResponse';
-import { CharacterAttributeFrontend } from './characterAttribute';
+import { CharacterAttributeFrontend, CharacterAttributeFrontendPopulated } from './characterAttribute';
 
 export interface CharacterAttribute_GET_all extends Common_Response_Success {
-  characterAttributes: CharacterAttributeFrontend[];
+  characterAttributes: CharacterAttributeFrontend[] | CharacterAttributeFrontendPopulated[];
 }
 
 export interface CharacterAttribute_POST extends Common_Response_Success {
