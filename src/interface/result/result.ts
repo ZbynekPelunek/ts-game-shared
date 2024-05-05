@@ -1,11 +1,18 @@
 import { Types } from 'mongoose';
 
-export interface Result {
-  characterId: Types.ObjectId;
+export interface CommonResultParams {
   adventureId: number;
   timeStart: string;
   timeFinish: string;
   combat?: ResultCombat | null;
+}
+
+export interface ResultBackend extends CommonResultParams {
+  characterId: Types.ObjectId;
+}
+
+export interface ResultFrontend extends CommonResultParams {
+  characterId: string;
 }
 
 export interface ResultCombat {
