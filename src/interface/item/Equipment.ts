@@ -8,7 +8,6 @@ export interface CommonItemsEquipmenParams extends CommonItemParams {
   slot: EquipmentSlot;
   equipmentType: ArmorType | WeaponType;
   setId?: number;
-  isShopItem?: boolean;
   maxItemLevel?: number;
   levelReq?: number;
 }

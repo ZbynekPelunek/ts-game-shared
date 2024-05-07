@@ -1,9 +1,14 @@
+import { CurrencyId } from '../currency/currency';
+
 export interface CommonItemParams {
   itemId: number;
   name: string;
   itemType: ItemType;
+  sell: {
+    value: number;
+    currencyId: CurrencyId; 
+  };
   maxAmount?: number;
-  sellValue?: number;
   quality?: ItemQuality;
   icon?: string;
 }

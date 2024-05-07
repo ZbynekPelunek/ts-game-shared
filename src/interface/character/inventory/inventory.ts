@@ -2,21 +2,28 @@ import { Types } from 'mongoose';
 
 export interface CommonInventoryParams {
   slot: number;
-  itemId?: number | null;
+  item?: InventoryItem | null;
 }
 
 export interface InventoryBackend extends CommonInventoryParams {
   _id?: Types.ObjectId;
   characterId: Types.ObjectId;
-  amount?: number;
 }
 
 export interface InventoryFrontend extends CommonInventoryParams {
-  inventoryId: string;
+  _id: string;
   characterId: string;
+}
+
+export interface InventoryItem {
+  itemId: number;
   amount: number;
 }
 
-export enum InventoryActions {
+export enum InventoryPostActions {
   NEW = 'createNew'
+}
+
+export enum InventoryPatchActions {
+  SELL_ITEM = 'sellItem'
 }

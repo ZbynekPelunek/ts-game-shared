@@ -23,18 +23,18 @@ export enum UiPosition {
   BOTTOM = 'BOTTOM'
 }
 
-export interface CommonEquipmentItemParams {
+export interface CommonEquipmentSlotParams {
   uiPosition: UiPosition;
   slot: EquipmentSlot;
   itemId?: number;
 }
 
-export interface CharacterEquipmentBackend extends CommonEquipmentItemParams {
+export interface CharacterEquipmentBackend extends CommonEquipmentSlotParams {
   characterId: Types.ObjectId;
   _id?: Types.ObjectId;
 }
 
-export interface CharacterEquipmentFrontend extends CommonEquipmentItemParams {
+export interface CharacterEquipmentFrontend extends CommonEquipmentSlotParams {
   equipmentId: string;
   characterId: string;
 }

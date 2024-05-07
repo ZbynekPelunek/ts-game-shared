@@ -3,7 +3,7 @@ import { Types } from 'mongoose';
 import { CurrencyId, Currency } from '../../currency/currency';
 
 export interface CommonCharacterCurrencyParams {
-  currencyId: CurrencyId;
+  currencyId: CurrencyId | Currency;
   amount: number;
 }
 
@@ -13,7 +13,6 @@ export interface CharacterCurrencyBackend extends CommonCharacterCurrencyParams 
 }
 
 export interface CharacterCurrencyFrontend extends CommonCharacterCurrencyParams {
-  characterCurrencyId: string;
+  _id: string;
   characterId: string;
-  currency?: Currency;
 }
