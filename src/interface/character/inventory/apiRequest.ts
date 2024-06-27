@@ -1,5 +1,6 @@
 export interface Request_Inventory_GET_all_query {
   characterId?: string;
+  slot?: number;
 }
 
 export interface Request_Inventory_GET_item_param {

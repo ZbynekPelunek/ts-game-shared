@@ -9,7 +9,7 @@ This part contains all interfaces that could be required in both Frontend and Ba
   - [Table of contents](#table-of-contents)
   - [Technologies](#technologies)
   - [Features](#features)
-  - [Instalation](#instalation)
+  - [Installation](#installation)
   - [Status](#status)
   - [Inspiration](#inspiration)
 
@@ -23,7 +23,7 @@ This part contains all interfaces that could be required in both Frontend and Ba
 * Response interfaces
 * Model interfaces
 
-## Instalation
+## Installation
 
 Clone this repository to the same folder as Frontend and Backend
 

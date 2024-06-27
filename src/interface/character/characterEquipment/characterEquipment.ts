@@ -26,7 +26,11 @@ export enum UiPosition {
 export interface CommonEquipmentSlotParams {
   uiPosition: UiPosition;
   slot: EquipmentSlot;
-  itemId?: number;
+  item?: CharacterEquipmentItem | null;
+}
+
+export interface CharacterEquipmentItem {
+  itemId: number;
 }
 
 export interface CharacterEquipmentBackend extends CommonEquipmentSlotParams {
@@ -35,6 +39,11 @@ export interface CharacterEquipmentBackend extends CommonEquipmentSlotParams {
 }
 
 export interface CharacterEquipmentFrontend extends CommonEquipmentSlotParams {
-  equipmentId: string;
+  _id: string;
   characterId: string;
+}
+
+export enum CharacterEquipmentPatchActions {
+  EQUIP_ITEM = 'equipItem',
+  UNEQUIP_ITEM = 'unequipItem'
 }
