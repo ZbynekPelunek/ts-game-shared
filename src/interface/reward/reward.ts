@@ -1,4 +1,6 @@
 import { RequireAtLeastOne } from '../../type/atLeastOne';
+import { Currency } from '../currency/currency';
+import { CommonItemsEquipmenParams } from '../item/Equipment';
 
 type RewardBasicParams = {
   _id: number;
@@ -11,12 +13,12 @@ type PossibleReward = {
 }
 
 export interface RewardCurrency {
-  currencyId: number;
+  currencyId: number | Currency;
   amount: number;
 }
 
 export interface RewardItem {
-  itemId: number;
+  itemId: number | CommonItemsEquipmenParams;
   amount: number;
 }
 
