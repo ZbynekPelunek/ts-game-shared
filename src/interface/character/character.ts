@@ -1,10 +1,10 @@
-import { Types } from 'mongoose';
+import { Types } from "mongoose";
 
 export interface CommonCharacterParams {
   name: string;
-  level?: number;
-  currentExperience?: number;
-  maxExperience?: number;
+  level: number;
+  currentExperience: number;
+  maxExperience: number;
   adventures?: number[];
 }
 
@@ -31,7 +31,7 @@ export interface CharacterFrontend extends CommonCharacterParams {
 // ];
 
 export enum CharacterActions {
-  EQUIP_ITEM = 'EQUIP_ITEM',
-  UNEQUIP_ITEM = 'UNEQUIP_ITEM',
-  SELL = 'SELL'
+  EQUIP_ITEM = "EQUIP_ITEM",
+  UNEQUIP_ITEM = "UNEQUIP_ITEM",
+  SELL = "SELL",
 }

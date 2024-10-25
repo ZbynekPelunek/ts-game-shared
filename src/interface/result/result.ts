@@ -1,15 +1,19 @@
-import { Types } from 'mongoose';
+import { Types } from "mongoose";
+import { IRewardSchema, RewardCurrency, RewardItem } from "../reward/reward";
 
 export interface CommonResultParams {
   adventureId: number;
+  adventureName: string;
   timeStart: string;
   timeFinish: string;
+  inProgress: boolean;
+  rewardCollected: boolean;
+  reward: ResultReward;
   combat?: ResultCombat | null;
+  characterId: Types.ObjectId | string;
 }
 
-export interface ResultBackend extends CommonResultParams {
-  characterId: Types.ObjectId;
-}
+export interface ResultBackend extends CommonResultParams {}
 
 export interface ResultFrontend extends CommonResultParams {
   characterId: string;
@@ -18,6 +22,12 @@ export interface ResultFrontend extends CommonResultParams {
 export interface ResultCombat {
   log: string;
   playerWon: boolean;
+}
+
+export interface ResultReward {
+  currencies: RewardCurrency[];
+  items: RewardItem[];
+  experience: number;
 }
 
 // Probably not needed

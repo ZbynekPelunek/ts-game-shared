@@ -1,4 +1,5 @@
-import { Types } from 'mongoose';
+import { Types } from "mongoose";
+import { CommonItemParams } from "../../item/item";
 
 export interface CommonInventoryParams {
   slot: number;
@@ -16,14 +17,15 @@ export interface InventoryFrontend extends CommonInventoryParams {
 }
 
 export interface InventoryItem {
-  itemId: number;
+  itemId: number | CommonItemParams;
   amount: number;
 }
 
 export enum InventoryPostActions {
-  NEW = 'createNew'
+  NEW = "createNew",
+  ADD_ITEM = "addItem",
 }
 
 export enum InventoryPatchActions {
-  SELL_ITEM = 'sellItem'
+  SELL_ITEM = "sellItem",
 }
