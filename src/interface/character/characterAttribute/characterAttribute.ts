@@ -1,27 +1,36 @@
-import { Types } from 'mongoose';
+import { Types, Document } from 'mongoose';
+import { AttributeName, BasicAttribute } from '../../attribute/attribute';
 
-import { BasicAttribute } from '../../attribute/attribute';
-
-export interface CommonCharacterAttributeParams {
+interface CharacterAttribute {
+  characterId: Types.ObjectId;
+  attributeName: AttributeName;
   baseValue: number;
-  addedValue: number;
-  statsAddedValue: number;
+  addedValue: AddedValue;
   totalValue: number;
   attribute?: BasicAttribute;
 }
 
-export interface CharacterAttributeBackend extends CommonCharacterAttributeParams {
+export type AddedValue = {
+  equipment: number;
+  otherAttributes: number;
+};
+
+export interface CharacterAttributeMongooseSchema
+  extends Partial<Omit<CharacterAttribute, 'addedValue'>> {
   characterId: Types.ObjectId;
-  attributeId: Types.ObjectId;
-  _id?: Types.ObjectId;
+  addedValue?: Partial<AddedValue>;
 }
 
-export interface CharacterAttributeFrontend extends CommonCharacterAttributeParams {
-  characterAttributeId: string;
-  characterId: string;
-  attributeId: string;
-}
+export interface CharacterAttributeDocument
+  extends CharacterAttributeMongooseSchema,
+    Document<Types.ObjectId> {}
 
-export interface CharacterAttributeFrontendPopulated extends CharacterAttributeFrontend {
-  attribute: BasicAttribute;
-}
+export type CharacterAttributeDTO = Pick<
+  CharacterAttributeDocument,
+  | 'baseValue'
+  | 'addedValue'
+  | 'totalValue'
+  | 'characterId'
+  | 'attributeName'
+  | 'attribute'
+>;

@@ -1,7 +1,8 @@
-import { CharacterEquipmentFrontend, CharacterEquipmentItem } from './characterEquipment';
+import { CharacterEquipmentFrontend, CharacterEquipmentItem, EquipmentSlot } from './characterEquipment';
 
 export interface Request_CharacterEquipment_GET_all_query {
-  characterId: string;
+  characterId?: string;
+  itemSlot?: EquipmentSlot;
 }
 
 export interface Request_CharacterEquipment_POST_body {
@@ -13,5 +14,5 @@ export interface Request_CharacterEquipment_PATCH_param {
 }
 
 export interface Request_CharacterEquipment_PATCH_body {
-  item: CharacterEquipmentItem | null;
+  itemId: number | null;
 }

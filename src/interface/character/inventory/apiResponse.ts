@@ -14,7 +14,7 @@ export interface Inventory_POST extends Common_Response_Success {
 }
 
 export interface Inventory_PATCH extends Common_Response_Success {
-  inventory: InventoryFrontend;
+
 }
 
 export interface Inventory_DELETE {}

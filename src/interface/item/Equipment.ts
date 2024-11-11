@@ -66,8 +66,6 @@ export enum WeaponType {
 
 export interface ItemAttribute {
   attributeName: AttributeName;
-  attributeMinValue: number;
-  attributeMaxValue: number;
+  attributeValue: number;
   requiredQuality: ItemQuality;
-  attributeRolledValue?: number;
 }

@@ -15,7 +15,7 @@ export interface Request_Inventory_POST_body {
 }
 
 export interface Request_Inventory_PATCH_param {
-  inventoryId: string;
+  inventorySlotId: string;
 }
 
 export interface Request_Inventory_PATCH_body {

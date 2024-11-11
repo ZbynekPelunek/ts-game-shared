@@ -3,7 +3,7 @@ import { CommonItemParams } from "../../item/item";
 
 export interface CommonInventoryParams {
   slot: number;
-  item?: InventoryItem | null;
+  item: InventoryItem | null;
 }
 
 export interface InventoryBackend extends CommonInventoryParams {
