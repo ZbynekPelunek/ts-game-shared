@@ -1,10 +1,14 @@
-import { CharacterAttributeFrontend } from './characterAttribute';
+import { CharacterAttributeCreateDTO } from './characterAttribute';
 
-export interface Request_CharacterAttribute_GET_all_query {
+export interface CharacterAttributeListQueryParams {
   characterId?: string;
   populateAttribute?: boolean;
 }
 
-export interface Request_CharacterAttribute_POST_body {
-  characterAttributes: CharacterAttributeFrontend | CharacterAttributeFrontend[];
+export interface CharacterAttributeCreateBody {
+  characterAttribute: CharacterAttributeCreateDTO;
+}
+
+export interface CharacterAttributeCreateBundleBody {
+  characterAttributes: CharacterAttributeCreateDTO[];
 }

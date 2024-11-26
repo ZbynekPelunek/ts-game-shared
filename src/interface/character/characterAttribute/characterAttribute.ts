@@ -17,6 +17,7 @@ export type AddedValue = {
 
 export interface CharacterAttributeMongooseSchema
   extends Partial<Omit<CharacterAttribute, 'addedValue'>> {
+  attributeName: AttributeName;
   characterId: Types.ObjectId;
   addedValue?: Partial<AddedValue>;
 }
@@ -25,12 +26,26 @@ export interface CharacterAttributeDocument
   extends CharacterAttributeMongooseSchema,
     Document<Types.ObjectId> {}
 
-export type CharacterAttributeDTO = Pick<
-  CharacterAttributeDocument,
-  | 'baseValue'
-  | 'addedValue'
-  | 'totalValue'
-  | 'characterId'
-  | 'attributeName'
-  | 'attribute'
->;
+export type CharacterAttributeDTO = Omit<
+  Pick<
+    CharacterAttribute,
+    | 'baseValue'
+    | 'addedValue'
+    | 'totalValue'
+    | 'characterId'
+    | 'attributeName'
+    | 'attribute'
+  >,
+  'characterId'
+> & {
+  characterId: string;
+  id: string;
+};
+
+export type CharacterAttributeCreateDTO = Omit<
+  Pick<CharacterAttribute, 'baseValue' | 'addedValue' | 'attributeName'>,
+  'characterId' | 'addedValue'
+> & {
+  characterId: string;
+  addedValue?: AddedValue;
+};
