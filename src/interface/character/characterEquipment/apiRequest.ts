@@ -3,6 +3,7 @@ import { CharacterEquipmentFrontend, CharacterEquipmentItem, EquipmentSlot } fro
 export interface Request_CharacterEquipment_GET_all_query {
   characterId?: string;
   itemSlot?: EquipmentSlot;
+  populateItem?: boolean;
 }
 
 export interface Request_CharacterEquipment_POST_body {
@@ -11,8 +12,4 @@ export interface Request_CharacterEquipment_POST_body {
 
 export interface Request_CharacterEquipment_PATCH_param {
   characterEquipmentId: string;
-}
-
-export interface Request_CharacterEquipment_PATCH_body {
-  itemId: number | null;
 }

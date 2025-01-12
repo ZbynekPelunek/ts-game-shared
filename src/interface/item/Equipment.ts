@@ -67,5 +67,5 @@ export enum WeaponType {
 export interface ItemAttribute {
   attributeName: AttributeName;
   attributeValue: number;
-  requiredQuality: ItemQuality;
+  requiredQuality?: ItemQuality;
 }
