@@ -1,5 +1,8 @@
-import { Common_Response_Success, Common_Response_Error } from '../API/commonResponse';
-import { ResultFrontend } from './result';
+import {
+  Common_Response_Success,
+  Common_Response_Error,
+} from '../API/commonResponse';
+import { ResultDTO, ResultFrontend } from './result';
 
 export interface Result_GET_all extends Common_Response_Success {
   results: ResultFrontend[];
@@ -10,11 +13,7 @@ export interface Result_GET_one extends Common_Response_Success {
 }
 
 export interface Result_POST extends Common_Response_Success {
-  result: {
-    resultId: string;
-    timeStart: string;
-    timeFinish: string;
-  };
+  result: ResultDTO;
 }
 
 export type Response_Result_POST = Result_POST | Common_Response_Error;

@@ -49,5 +49,6 @@ export enum CharacterEquipmentPostActions {
 
 export enum CharacterEquipmentPatchActions {
   EQUIP_ITEM = 'equipItem',
-  UNEQUIP_ITEM = 'unequipItem'
+  UNEQUIP_ITEM = 'unequipItem',
+  SELL_ITEM = 'sellItem'
 }
