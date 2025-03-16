@@ -1,8 +1,10 @@
-import { Types } from "mongoose";
+import { Types } from 'mongoose';
 
 export interface CommonCharacterParams {
   name: string;
   level: number;
+  characterClass: CharacterClass;
+  race: CharacterRace;
   currentExperience: number;
   maxExperience: number;
   adventures?: number[];
@@ -19,19 +21,16 @@ export interface CharacterFrontend extends CommonCharacterParams {
   accountId: string;
 }
 
-// export type EquipmentSlotsArr = [
-//   {
-//     slot: EquipmentSlot.ARMOR;
-//     equipment: EquipableItem | null;
-//   },
-//   {
-//     slot: EquipmentSlot.WEAPON;
-//     equipment: EquipableItem | null;
-//   }
-// ];
+export enum CharacterRace {
+  HUMAN = 'Human',
+}
+
+export enum CharacterClass {
+  WARRIOR = 'Warrior',
+}
 
 export enum CharacterActions {
-  EQUIP_ITEM = "EQUIP_ITEM",
-  UNEQUIP_ITEM = "UNEQUIP_ITEM",
-  SELL = "SELL",
+  EQUIP_ITEM = 'EQUIP_ITEM',
+  UNEQUIP_ITEM = 'UNEQUIP_ITEM',
+  SELL = 'SELL',
 }

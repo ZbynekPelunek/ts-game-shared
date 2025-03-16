@@ -6,8 +6,7 @@ export interface CommonResultParams {
   adventureName: string;
   timeStart: string;
   timeFinish: string;
-  inProgress: boolean;
-  rewardCollected: boolean;
+  state: ResultState;
   reward: ResultReward;
   combat?: ResultCombat | null;
   characterId: Types.ObjectId | string;
@@ -38,4 +37,23 @@ export interface ResultReward {
   currencies: RewardCurrency[];
   items: RewardItem[];
   experience: number;
+}
+
+export enum ResultState {
+  IN_PROGRESS = 'InProgress',
+  CANCELED = 'Canceled',
+  SKIPPED = 'Skipped',
+  FINISHED = 'Finished',
+  REWARD_COLLECTED = 'RewardCollected',
+}
+
+export enum ResultGetActions {
+  CHECK_IN_PROGRESS = 'checkInProgress',
+}
+
+export enum ResultPatchActions {
+  COLLECT_REWARD = 'collectReward',
+  FINISH_RESULT = 'finishResult',
+  CANCEL_ADVENTURE = 'cancelAdventure',
+  SKIP_ADVENTURE = 'skipAdventure',
 }
