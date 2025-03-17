@@ -1,16 +1,18 @@
-import { Common_Request_GET_all } from "../API/commonRequest";
+import { ParamsDictionary } from 'express-serve-static-core';
+
+import { CommonListRequestQuery } from '../API/commonRequest';
 import { ResultState } from './result';
 
-export interface Request_Result_GET_all_query extends Common_Request_GET_all {
+export interface ListResultsRequestQuery extends CommonListRequestQuery {
   characterId?: string;
   state?: ResultState;
 }
 
-export interface Request_Result_GET_one_params {
+export interface GetResultRequestParams extends ParamsDictionary {
   resultId: string;
 }
 
-export interface Request_Result_POST_body {
+export interface CreateResultRequestBody {
   characterId: string;
   adventureId: number;
 }

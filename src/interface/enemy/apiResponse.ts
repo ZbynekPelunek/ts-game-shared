@@ -1,13 +1,16 @@
-import { Common_Response_Error, Common_Response_Success } from '../API/commonResponse';
-import { Enemy } from './enemy';
+import {
+  Common_Response_Error,
+  Common_Response_Success,
+} from '../API/commonResponse';
+import { EnemyDTO } from './enemy';
 
-export interface Enemy_GET_all extends Common_Response_Success {
-  enemies: Enemy[];
+export interface ListEnemies extends Common_Response_Success {
+  enemies: EnemyDTO[];
 }
 
-export interface Enemy_GET_one extends Common_Response_Success {
-  enemy: Enemy;
+export interface GetEnemy extends Common_Response_Success {
+  enemy: EnemyDTO;
 }
 
-export type Response_Enemy_GET_all = Enemy_GET_all | Common_Response_Error;
-export type Response_Enemy_GET_one = Enemy_GET_one | Common_Response_Error;
+export type ListEnemiesResponse = ListEnemies | Common_Response_Error;
+export type GetEnemyResponse = GetEnemy | Common_Response_Error;

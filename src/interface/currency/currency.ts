@@ -1,6 +1,6 @@
 export enum CurrencyId {
-  GOLD,
-  CHEATING_CURRENCY
+  GOLD = 'GOLD',
+  CHEATING_CURRENCY = 'CHEATING CURRENCY',
 }
 
 export interface Currency {

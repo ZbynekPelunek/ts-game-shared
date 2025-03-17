@@ -1,18 +1,17 @@
+import { ParamsDictionary } from 'express-serve-static-core';
+
+import { CommonListRequestQuery } from '../API/commonRequest';
 import { CharacterClass, CharacterRace } from './character';
 
-export interface Request_Character_GET_all_query {
+export interface ListCharactersRequestQuery extends CommonListRequestQuery {
   accountId?: string;
 }
 
-export interface Request_Character_GET_one_params {
+export interface GetCharacterRequestParams extends ParamsDictionary {
   characterId: string;
 }
 
-export interface Request_Character_GET_one_query {
-  populateInventory: boolean;
-}
-
-export interface Request_Character_POST_body {
+export interface CreateCharacterRequestBody {
   accountId: string;
   name: string;
   race: CharacterRace;

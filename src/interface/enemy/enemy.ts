@@ -1,6 +1,8 @@
+import { Document } from 'mongoose';
+
 import { AttributeName } from '../attribute/attribute';
 
-export interface Enemy {
+interface Enemy {
   _id: number;
   name: string;
   type: EnemyTypes;
@@ -15,5 +17,11 @@ export interface EnemyAttribute {
 export enum EnemyTypes {
   BEAST = 'Beast',
   HUMANOID = 'Humanoid',
-  DEMON = 'Demon'
+  DEMON = 'Demon',
 }
+
+export interface EnemyMongooseSchema extends Enemy {}
+export interface EnemyDocument extends Enemy, Document<number> {}
+
+export interface EnemyDTO
+  extends Pick<Enemy, '_id' | 'attributes' | 'name' | 'type'> {}

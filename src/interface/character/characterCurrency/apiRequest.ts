@@ -1,20 +1,28 @@
+import { ParsedQs } from 'qs';
+import { ParamsDictionary } from 'express-serve-static-core';
+
 import { CurrencyId } from '../../currency/currency';
 import { CharacterCurrencyFrontend } from './characterCurrency';
 
-export interface Request_CharacterCurrency_GET_all_query {
+export interface ListCharacterCurrenciesQuery extends ParsedQs {
   characterId?: string;
   currencyId?: CurrencyId;
-  populateCurrency?: boolean;
+  populateCurrency?: string;
 }
 
-export interface Request_CharacterCurrency_POST_body {
-  characterCurrencies: Omit<CharacterCurrencyFrontend, '_id'> | Omit<CharacterCurrencyFrontend, '_id'>[];
+export interface CreateCharacterCurrencyRequestBody {
+  characterCurrencies:
+    | Pick<CharacterCurrencyFrontend, 'amount' | 'characterId' | 'currencyId'>
+    | Pick<
+        CharacterCurrencyFrontend,
+        'amount' | 'characterId' | 'currencyId'
+      >[];
 }
 
-export interface Request_CharacterCurrency_PATCH_param {
+export interface UpdateCharacterCurrencyRequestParams extends ParamsDictionary {
   characterCurrencyId: string;
 }
 
-export interface Request_CharacterCurrency_PATCH_body {
+export interface UpdateCharacterCurrencyRequestBody {
   amount: number;
 }

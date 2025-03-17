@@ -1,3 +1,5 @@
-export interface Request_Enemy_GET_one_params {
-  enemyId: number;
+import { ParamsDictionary } from 'express-serve-static-core';
+
+export interface GetEnemyRequestParams extends ParamsDictionary {
+  enemyId: string;
 }

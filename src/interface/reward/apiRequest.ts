@@ -1,3 +1,5 @@
-export interface Request_Reward_GET_one_params {
-  rewardId: number;
+import { ParamsDictionary } from 'express-serve-static-core';
+
+export interface GetRewardRequestParams extends ParamsDictionary {
+  rewardId: string;
 }

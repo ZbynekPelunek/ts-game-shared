@@ -1,10 +1,9 @@
-import { RequireAtLeastOne } from "../../type/atLeastOne";
-import { Currency } from "../currency/currency";
-import { CommonItemsEquipmenParams } from "../item/Equipment";
+import { Document } from 'mongoose';
+import { RequireAtLeastOne } from '../../type/atLeastOne';
+import { Currency } from '../currency/currency';
+import { CommonItemsEquipmenParams } from '../item/Equipment';
 
-type RewardBasicParams = {
-  _id: number;
-};
+type RewardBasicParams = { _id: number };
 
 type PossibleReward = {
   currencies?: [RewardCurrency, ...RewardCurrency[]];
@@ -13,7 +12,7 @@ type PossibleReward = {
 };
 
 export interface RewardCurrency {
-  currencyId: number | Currency;
+  currencyId: string | Currency;
   amount: number;
 }
 
@@ -22,5 +21,15 @@ export interface RewardItem {
   amount: number;
 }
 
-export interface IRewardSchema extends RewardBasicParams, PossibleReward {}
+export interface RewardMongooseSchema
+  extends RewardBasicParams,
+    PossibleReward {}
+
+export interface RewardDocument
+  extends RewardMongooseSchema,
+    Document<number> {}
+
 export type Reward = RewardBasicParams & RequireAtLeastOne<PossibleReward>;
+
+export interface RewardDTO
+  extends Pick<Reward, '_id' | 'currencies' | 'experience' | 'items'> {}

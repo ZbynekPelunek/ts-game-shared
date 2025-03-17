@@ -1,15 +1,30 @@
-import { CharacterEquipmentFrontend, CharacterEquipmentItem, EquipmentSlot } from './characterEquipment';
+import { ParsedQs } from 'qs';
+import { ParamsDictionary } from 'express-serve-static-core';
 
-export interface Request_CharacterEquipment_GET_all_query {
+import {
+  CharacterEquipmentFrontend,
+  EquipmentSlot,
+} from './characterEquipment';
+
+export interface ListCharacterEquipmentsRequestQuery extends ParsedQs {
   characterId?: string;
   itemSlot?: EquipmentSlot;
-  populateItem?: boolean;
+  populateItem?: string;
 }
 
-export interface Request_CharacterEquipment_POST_body {
-  characterEquipment: Omit<CharacterEquipmentFrontend, '_id'> | Omit<CharacterEquipmentFrontend, '_id'>[];
+export interface CreateCharacterEquipmentRequestBody {
+  characterEquipment:
+    | Pick<
+        CharacterEquipmentFrontend,
+        'characterId' | 'itemId' | 'slot' | 'uiPosition'
+      >
+    | Pick<
+        CharacterEquipmentFrontend,
+        'characterId' | 'itemId' | 'slot' | 'uiPosition'
+      >[];
 }
 
-export interface Request_CharacterEquipment_PATCH_param {
+export interface UpdateCharacterEquipmentRequestParams
+  extends ParamsDictionary {
   characterEquipmentId: string;
 }

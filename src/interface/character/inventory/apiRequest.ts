@@ -1,31 +1,30 @@
-export interface Request_Inventory_GET_all_query {
+import { ParsedQs } from 'qs';
+import { ParamsDictionary } from 'express-serve-static-core';
+
+export interface ListInventoriesRequestQuery extends ParsedQs {
   characterId?: string;
-  slot?: number;
-  populateItem?: boolean;
+  slot?: string;
+  populateItem?: string;
 }
 
-export interface Request_Inventory_GET_item_param {
+export interface GetInventoryRequestParams extends ParamsDictionary {
   inventoryId: string;
 }
 
-export interface Request_Inventory_POST_body {
+export interface CreateInventoryRequestBody {
   characterId: string;
   slot?: number;
   itemId?: number | null;
 }
 
-export interface Request_Inventory_PATCH_param {
+export interface UpdateInventoryRequestParams extends ParamsDictionary {
   inventorySlotId: string;
 }
 
-export interface Request_Inventory_PATCH_body {
-  item: {
-    itemId: number;
-    amount: number;
-    previousSlot?: number;
-  } | null;
+export interface UpdateInventoryRequestBody {
+  item: { itemId: number; amount: number; previousSlot?: number } | null;
 }
 
-export interface Request_Inventory_DELETE_param {
+export interface DeleteInventoryRequestParams extends ParamsDictionary {
   inventoryId: string;
 }

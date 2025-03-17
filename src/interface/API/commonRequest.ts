@@ -1,3 +1,5 @@
-export interface Common_Request_GET_all {
-  limit?: number;
+import { ParsedQs } from 'qs';
+
+export interface CommonListRequestQuery extends ParsedQs {
+  limit?: string;
 }

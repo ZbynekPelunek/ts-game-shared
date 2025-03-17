@@ -1,8 +1,9 @@
+import { ParsedQs } from 'qs';
 import { CharacterAttributeCreateDTO } from './characterAttribute';
 
-export interface CharacterAttributeListQueryParams {
+export interface ListCharacterAttributesRequestQuery extends ParsedQs {
   characterId?: string;
-  populateAttribute?: boolean;
+  populateAttribute?: string;
 }
 
 export interface CharacterAttributeCreateBody {

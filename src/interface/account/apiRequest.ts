@@ -1,14 +1,14 @@
-export interface Request_Account_POST_body {
+export interface CreateAccountRequestBody {
   username: string;
   email: string;
   password: string;
 }
 
 // TODO: refactor to update account information
-/* export interface Request_Account_PATCH_params {
+/* export interface UpdateAccountRequestParams {
   accountId: string;
 }
 
-export interface Request_Account_PATCH_body {
+export interface UpdateAccountRequestBody {
   characterId: string;
 } */

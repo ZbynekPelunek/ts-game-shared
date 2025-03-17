@@ -1,5 +1,5 @@
-import { Types } from 'mongoose';
+import { ParamsDictionary } from 'express-serve-static-core';
 
-export interface Request_Attribute_GET_Params {
-  attributeId: Types.ObjectId;
+export interface GetAttributeRequestParams extends ParamsDictionary {
+  attributeId: string;
 }

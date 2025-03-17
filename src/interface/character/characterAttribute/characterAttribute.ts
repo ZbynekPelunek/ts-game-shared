@@ -10,10 +10,7 @@ interface CharacterAttribute {
   attribute?: BasicAttribute;
 }
 
-export type AddedValue = {
-  equipment: number;
-  otherAttributes: number;
-};
+export type AddedValue = { equipment: number; otherAttributes: number };
 
 export interface CharacterAttributeMongooseSchema
   extends Partial<Omit<CharacterAttribute, 'addedValue'>> {
@@ -37,15 +34,9 @@ export type CharacterAttributeDTO = Omit<
     | 'attribute'
   >,
   'characterId'
-> & {
-  characterId: string;
-  id: string;
-};
+> & { characterId: string; id: string };
 
 export type CharacterAttributeCreateDTO = Omit<
   Pick<CharacterAttribute, 'baseValue' | 'addedValue' | 'attributeName'>,
   'characterId' | 'addedValue'
-> & {
-  characterId: string;
-  addedValue?: AddedValue;
-};
+> & { characterId: string; addedValue?: AddedValue };
