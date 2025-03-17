@@ -1,5 +1,5 @@
 import { ParsedQs } from 'qs';
-import { ParamsDictionary } from 'express-serve-static-core';
+import type { ParamsDictionary } from 'express-serve-static-core';
 
 export interface ListInventoriesRequestQuery extends ParsedQs {
   characterId?: string;

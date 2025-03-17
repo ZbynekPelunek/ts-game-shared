@@ -1,4 +1,4 @@
-import { ParamsDictionary } from 'express-serve-static-core';
+import type { ParamsDictionary } from 'express-serve-static-core';
 
 import { CommonListRequestQuery } from '../API/commonRequest';
 import { ResultState } from './result';
