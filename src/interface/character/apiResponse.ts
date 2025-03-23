@@ -1,21 +1,21 @@
 import { CharacterFrontend } from './character';
 import {
-  Common_Response_Error,
-  Common_Response_Success,
+  CommonErrorResponse,
+  CommonSuccessResponse,
 } from '../API/commonResponse';
 
-export interface ListCharacters extends Common_Response_Success {
+export interface ListCharacters extends CommonSuccessResponse {
   characters: CharacterFrontend[];
 }
 
-export interface GetCharacter extends Common_Response_Success {
+export interface GetCharacter extends CommonSuccessResponse {
   character: CharacterFrontend;
 }
 
-export interface CreateCharacter extends Common_Response_Success {
+export interface CreateCharacter extends CommonSuccessResponse {
   character: CharacterFrontend;
 }
 
-export type ListCharactersResponse = ListCharacters | Common_Response_Error;
-export type GetCharacterResponse = GetCharacter | Common_Response_Error;
-export type CreateCharacterResponse = CreateCharacter | Common_Response_Error;
+export type ListCharactersResponse = ListCharacters | CommonErrorResponse;
+export type GetCharacterResponse = GetCharacter | CommonErrorResponse;
+export type CreateCharacterResponse = CreateCharacter | CommonErrorResponse;

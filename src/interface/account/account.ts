@@ -1,11 +1,7 @@
-export interface IAccountSchema {
-  username: string;
-  email: string;
-  password: string;
-  level?: number;
-}
+import { Types, Document } from 'mongoose';
 
-export interface Account extends IAccountSchema {
-  id: string;
-  level: number;
-}
+import { Account } from '../../../../backend/src/interfaces/account';
+
+export interface AccountDocument
+  extends Account,
+    Document<Types.ObjectId, {}, Account> {}

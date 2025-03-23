@@ -1,17 +1,17 @@
 import { CommonItemParams } from './item';
 import { CommonItemsEquipmenParams } from './Equipment';
 import {
-  Common_Response_Error,
-  Common_Response_Success,
+  CommonErrorResponse,
+  CommonSuccessResponse,
 } from '../API/commonResponse';
 
-export interface ListItems extends Common_Response_Success {
+export interface ListItems extends CommonSuccessResponse {
   items: CommonItemParams[] | CommonItemsEquipmenParams[];
 }
 
-export interface GetItem extends Common_Response_Success {
+export interface GetItem extends CommonSuccessResponse {
   item: CommonItemParams | CommonItemsEquipmenParams;
 }
 
-export type ListItemsResponse = ListItems | Common_Response_Error;
-export type GetItemResponse = GetItem | Common_Response_Error;
+export type ListItemsResponse = ListItems | CommonErrorResponse;
+export type GetItemResponse = GetItem | CommonErrorResponse;

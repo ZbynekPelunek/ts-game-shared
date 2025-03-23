@@ -1,16 +1,16 @@
 import { Adventure } from './adventure';
 import {
-  Common_Response_Error,
-  Common_Response_Success,
+  CommonErrorResponse,
+  CommonSuccessResponse,
 } from '../API/commonResponse';
 
-export interface ListAdventures extends Common_Response_Success {
+export interface ListAdventures extends CommonSuccessResponse {
   adventures: Adventure[];
 }
 
-export interface GetAdventure extends Common_Response_Success {
+export interface GetAdventure extends CommonSuccessResponse {
   adventure: Adventure;
 }
 
-export type ListAdventuresResponse = ListAdventures | Common_Response_Error;
-export type GetAdventureResponse = GetAdventure | Common_Response_Error;
+export type ListAdventuresResponse = ListAdventures | CommonErrorResponse;
+export type GetAdventureResponse = GetAdventure | CommonErrorResponse;

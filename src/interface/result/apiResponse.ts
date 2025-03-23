@@ -1,21 +1,21 @@
 import {
-  Common_Response_Success,
-  Common_Response_Error,
+  CommonSuccessResponse,
+  CommonErrorResponse,
 } from '../API/commonResponse';
 import { ResultDTO, ResultFrontend } from './result';
 
-export interface ListResults extends Common_Response_Success {
+export interface ListResults extends CommonSuccessResponse {
   results: ResultFrontend[];
 }
 
-export interface GetResult extends Common_Response_Success {
+export interface GetResult extends CommonSuccessResponse {
   result: ResultFrontend;
 }
 
-export interface CreateResult extends Common_Response_Success {
+export interface CreateResult extends CommonSuccessResponse {
   result: ResultDTO;
 }
 
-export type CreateResultResponse = CreateResult | Common_Response_Error;
-export type ListResultsResponse = ListResults | Common_Response_Error;
-export type GetResultResponse = GetResult | Common_Response_Error;
+export type CreateResultResponse = CreateResult | CommonErrorResponse;
+export type ListResultsResponse = ListResults | CommonErrorResponse;
+export type GetResultResponse = GetResult | CommonErrorResponse;

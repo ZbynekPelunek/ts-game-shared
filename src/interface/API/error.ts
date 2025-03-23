@@ -1,4 +1,5 @@
-export interface API_Response_Error {
-  type: string;
+export interface ApiErrorResponse {
   message: string;
+  type?: string;
+  details?: string | string[];
 }

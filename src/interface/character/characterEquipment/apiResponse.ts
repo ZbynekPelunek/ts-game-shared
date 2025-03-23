@@ -1,32 +1,32 @@
 import { CharacterEquipmentFrontend } from './characterEquipment';
 import {
-  Common_Response_Error,
-  Common_Response_Success,
+  CommonErrorResponse,
+  CommonSuccessResponse,
 } from '../../API/commonResponse';
 
-export interface ListCharacterEquipments extends Common_Response_Success {
+export interface ListCharacterEquipments extends CommonSuccessResponse {
   characterEquipments: CharacterEquipmentFrontend[];
 }
 
-export interface CreateCharacterEquipment extends Common_Response_Success {
+export interface CreateCharacterEquipment extends CommonSuccessResponse {
   characterEquipment: CharacterEquipmentFrontend[];
 }
 
-export interface UpdateCharacterEquipment extends Common_Response_Success {
+export interface UpdateCharacterEquipment extends CommonSuccessResponse {
   characterEquipment: CharacterEquipmentFrontend;
 }
 
-export interface CharacterEquipmentUnequip extends Common_Response_Success {}
+export interface CharacterEquipmentUnequip extends CommonSuccessResponse {}
 
 export type ListCharacterEquipmentsResponse =
   | ListCharacterEquipments
-  | Common_Response_Error;
+  | CommonErrorResponse;
 export type CreateCharacterEquipmentResponse =
   | CreateCharacterEquipment
-  | Common_Response_Error;
+  | CommonErrorResponse;
 export type UpdateCharacterEquipmentResponse =
   | UpdateCharacterEquipment
-  | Common_Response_Error;
+  | CommonErrorResponse;
 export type CharacterEquipmentUnequipResponse =
   | CharacterEquipmentUnequip
-  | Common_Response_Error;
+  | CommonErrorResponse;

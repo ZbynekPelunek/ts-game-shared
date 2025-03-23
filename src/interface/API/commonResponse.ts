@@ -1,10 +1,10 @@
-import { API_Response_Error } from './error';
+import { ApiErrorResponse } from './error';
 
-export interface Common_Response_Success {
+export interface CommonSuccessResponse {
   success: true;
 }
 
-export interface Common_Response_Error {
+export interface CommonErrorResponse {
   success: false;
-  error: API_Response_Error[] | unknown;
+  error: ApiErrorResponse;
 }

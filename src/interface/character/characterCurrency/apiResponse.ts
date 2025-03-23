@@ -1,27 +1,27 @@
 import {
-  Common_Response_Error,
-  Common_Response_Success,
+  CommonErrorResponse,
+  CommonSuccessResponse,
 } from '../../API/commonResponse';
 import { CharacterCurrencyFrontend } from './characterCurrency';
 
-export interface ListCharacterCurrencies extends Common_Response_Success {
+export interface ListCharacterCurrencies extends CommonSuccessResponse {
   characterCurrencies: CharacterCurrencyFrontend[];
 }
 
-export interface CreateCharacterCurrencies extends Common_Response_Success {
+export interface CreateCharacterCurrencies extends CommonSuccessResponse {
   characterCurrencies: CharacterCurrencyFrontend[];
 }
 
-export interface UpdateCharacterCurrency extends Common_Response_Success {
+export interface UpdateCharacterCurrency extends CommonSuccessResponse {
   characterCurrency: CharacterCurrencyFrontend;
 }
 
 export type CreateCharacterCurrenciesResponse =
   | CreateCharacterCurrencies
-  | Common_Response_Error;
+  | CommonErrorResponse;
 export type ListCharacterCurrenciesResponse =
   | ListCharacterCurrencies
-  | Common_Response_Error;
+  | CommonErrorResponse;
 export type UpdateCharacterCurrencyResponse =
   | UpdateCharacterCurrency
-  | Common_Response_Error;
+  | CommonErrorResponse;

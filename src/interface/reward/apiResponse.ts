@@ -1,16 +1,16 @@
 import { RewardDTO } from './reward';
 import {
-  Common_Response_Error,
-  Common_Response_Success,
+  CommonErrorResponse,
+  CommonSuccessResponse,
 } from '../API/commonResponse';
 
-export interface ListRewards extends Common_Response_Success {
+export interface ListRewards extends CommonSuccessResponse {
   rewards: RewardDTO[];
 }
 
-export interface GetReward extends Common_Response_Success {
+export interface GetReward extends CommonSuccessResponse {
   reward: RewardDTO;
 }
 
-export type ListRewardsResponse = ListRewards | Common_Response_Error;
-export type GetRewardResponse = GetReward | Common_Response_Error;
+export type ListRewardsResponse = ListRewards | CommonErrorResponse;
+export type GetRewardResponse = GetReward | CommonErrorResponse;

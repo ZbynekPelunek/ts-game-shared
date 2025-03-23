@@ -4,8 +4,7 @@ export * from './interface/API/error';
 
 // ACCOUNT
 export * from './interface/account/account';
-export * from './interface/account/apiRequest';
-export * from './interface/account/apiResponse';
+export * from './interface/account/accountDTOs';
 
 // ADVENTURE
 export * from './interface/adventure/adventure';
