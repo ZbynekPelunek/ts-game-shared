@@ -10,10 +10,12 @@ export interface AccountDTO
 }
 
 //LIST
-export type ListAccountsResponseDTO =
+export interface ListAccountsResponseDTO extends Pick<AccountDTO, '_id'> {}
+
+export type ListAccountsResponse =
   | {
       success: true;
-      accounts: Pick<AccountDTO, '_id'>[];
+      accounts: ListAccountsResponseDTO[];
     }
   | CommonErrorResponse;
 
@@ -22,10 +24,12 @@ export interface GetAccountRequestParams extends ParamsDictionary {
   accountId: string;
 }
 
-export type GetAccountResponseDTO =
+export interface GetAccountResponseDTO extends Pick<AccountDTO, '_id'> {}
+
+export type GetAccountResponse =
   | {
       success: true;
-      account: Pick<AccountDTO, '_id'>;
+      account: GetAccountResponseDTO;
     }
   | CommonErrorResponse;
 
@@ -33,8 +37,22 @@ export type GetAccountResponseDTO =
 export interface CreateAccountRequestDTO
   extends Pick<AccountDTO, 'username' | 'password' | 'email'> {}
 
-export type CreateAccountResponseDTO =
-  | { success: true; account: Pick<AccountDTO, '_id' | 'email' | 'username'> }
+export interface CreateAccountResponseDTO
+  extends Pick<AccountDTO, '_id' | 'email' | 'username'> {}
+
+export type CreateAccountResponse =
+  | { success: true; account: CreateAccountResponseDTO }
+  | CommonErrorResponse;
+
+//LOGIN
+export interface LoginAccountRequestDTO
+  extends Pick<AccountDTO, 'password' | 'email'> {}
+
+export interface LoginAccountResponseDTO
+  extends Pick<AccountDTO, '_id' | 'email' | 'username'> {}
+
+export type LoginAccountResponse =
+  | { success: true; account: LoginAccountResponseDTO }
   | CommonErrorResponse;
 
 //UPDATE
@@ -47,10 +65,13 @@ export interface UpdateAccountRequestDTO
     Pick<AccountDTO, 'username' | 'password' | 'email' | 'accountLevel'>
   > {}
 
-export type UpdateAccountResponseDTO =
+export interface UpdateAccountResponseDTO
+  extends Pick<AccountDTO, '_id' | 'email' | 'username' | 'accountLevel'> {}
+
+export type UpdateAccountResponse =
   | {
       success: true;
-      account: Pick<AccountDTO, '_id' | 'username' | 'email' | 'accountLevel'>;
+      account: UpdateAccountResponseDTO;
     }
   | CommonErrorResponse;
 
@@ -59,4 +80,4 @@ export interface DeleteAccountRequestParams extends ParamsDictionary {
   accountId: string;
 }
 
-export type DeleteAccountResponseDTO = { success: true } | CommonErrorResponse;
+export type DeleteAccountResponse = { success: true } | CommonErrorResponse;
