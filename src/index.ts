@@ -38,6 +38,7 @@ export * from './interface/character/characterEquipment/apiResponse';
 
 // CURRENCY
 export * from './interface/currency/currency';
+export * from './interface/currency/currencyDTOs';
 
 // ENEMY
 export * from './interface/enemy/enemy';

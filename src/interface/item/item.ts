@@ -1,4 +1,4 @@
-import { CurrencyId } from "../currency/currency";
+import { CurrencyId } from '../currency/currency';
 
 export interface CommonItemParams {
   icon: string;
@@ -14,14 +14,14 @@ export interface CommonItemParams {
 }
 
 export enum ItemQuality {
-  COMMON = "COMMON",
-  UNCOMMON = "UNCOMMON",
-  RARE = "RARE",
-  EPIC = "EPIC",
-  LEGENDARY = "LEGENDARY",
+  COMMON = 'COMMON',
+  UNCOMMON = 'UNCOMMON',
+  RARE = 'RARE',
+  EPIC = 'EPIC',
+  LEGENDARY = 'LEGENDARY',
 }
 
 export enum ItemType {
-  EQUIPMENT = "EQUIPMENT",
-  REAGENT = "REAGENT",
+  EQUIPMENT = 'EQUIPMENT',
+  REAGENT = 'REAGENT',
 }

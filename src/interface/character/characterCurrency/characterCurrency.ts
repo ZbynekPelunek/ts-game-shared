@@ -1,18 +1,21 @@
 import { Types } from 'mongoose';
 
-import { CurrencyId, Currency } from '../../currency/currency';
+import { CurrencyId } from '../../currency/currency';
+import { CurrencyDTO } from '../../currency/currencyDTOs';
 
 export interface CommonCharacterCurrencyParams {
-  currencyId: CurrencyId | Currency;
+  currencyId: CurrencyId | CurrencyDTO;
   amount: number;
 }
 
-export interface CharacterCurrencyBackend extends CommonCharacterCurrencyParams {
+export interface CharacterCurrencyBackend
+  extends CommonCharacterCurrencyParams {
   _id?: Types.ObjectId;
   characterId: Types.ObjectId;
 }
 
-export interface CharacterCurrencyFrontend extends CommonCharacterCurrencyParams {
+export interface CharacterCurrencyFrontend
+  extends CommonCharacterCurrencyParams {
   _id: string;
   characterId: string;
 }
