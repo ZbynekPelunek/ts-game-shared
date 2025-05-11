@@ -1,6 +1,11 @@
 import { Types, Document } from 'mongoose';
 
-import { Account } from '../../../../backend/src/interfaces/account';
+export interface Account {
+  email: string;
+  password: string;
+  username: string;
+  accountLevel?: number;
+}
 
 export interface AccountDocument
   extends Account,

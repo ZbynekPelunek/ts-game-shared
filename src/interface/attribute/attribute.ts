@@ -1,18 +1,8 @@
-import { Types } from 'mongoose';
-
-export interface BasicAttribute {
+export interface Attribute {
   label: string;
   attributeName: AttributeName;
   isPercent: boolean;
   desc?: string;
-}
-
-export interface BasicAttributeFrontend extends BasicAttribute {
-  attributeId: string;
-}
-
-export interface BasicAttributeBackend extends BasicAttribute {
-  _id: Types.ObjectId;
 }
 
 export enum MainAttributeNames {
@@ -46,4 +36,8 @@ export enum MiscAttributeNames {
   BONUS_DAMAGE_PERCENT = 'BONUS_DAMAGE_PERCENT'
 }
 
-export type AttributeName = MainAttributeNames | PrimaryAttributeNames | SecondaryAttributeNames | MiscAttributeNames;
+export type AttributeName =
+  | MainAttributeNames
+  | PrimaryAttributeNames
+  | SecondaryAttributeNames
+  | MiscAttributeNames;

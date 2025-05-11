@@ -1,7 +1,7 @@
 import { ParamsDictionary } from 'express-serve-static-core';
 
-import { Account } from '../../../../backend/src/interfaces/account';
 import { CommonErrorResponse } from '../API/commonResponse';
+import { Account } from './account';
 
 export interface AccountDTO
   extends Pick<Account, 'username' | 'email' | 'password' | 'accountLevel'> {
@@ -42,17 +42,6 @@ export interface CreateAccountResponseDTO
 
 export type CreateAccountResponse =
   | { success: true; account: CreateAccountResponseDTO }
-  | CommonErrorResponse;
-
-//LOGIN
-export interface LoginAccountRequestDTO
-  extends Pick<AccountDTO, 'password' | 'email'> {}
-
-export interface LoginAccountResponseDTO
-  extends Pick<AccountDTO, '_id' | 'email' | 'username'> {}
-
-export type LoginAccountResponse =
-  | { success: true; account: LoginAccountResponseDTO }
   | CommonErrorResponse;
 
 //UPDATE

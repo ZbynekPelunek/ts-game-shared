@@ -1,5 +1,5 @@
 import { Types, Document } from 'mongoose';
-import { AttributeName, BasicAttribute } from '../../attribute/attribute';
+import { AttributeName, Attribute } from '../../attribute/attribute';
 
 interface CharacterAttribute {
   characterId: Types.ObjectId;
@@ -7,7 +7,7 @@ interface CharacterAttribute {
   baseValue: number;
   addedValue: AddedValue;
   totalValue: number;
-  attribute?: BasicAttribute;
+  attribute?: Attribute;
 }
 
 export type AddedValue = { equipment: number; otherAttributes: number };
@@ -34,9 +34,4 @@ export type CharacterAttributeDTO = Omit<
     | 'attribute'
   >,
   'characterId'
-> & { characterId: string; id: string };
-
-export type CharacterAttributeCreateDTO = Omit<
-  Pick<CharacterAttribute, 'baseValue' | 'addedValue' | 'attributeName'>,
-  'characterId' | 'addedValue'
-> & { characterId: string; addedValue?: AddedValue };
+> & { characterId: string; baseValue: number };

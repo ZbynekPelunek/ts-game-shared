@@ -13,13 +13,14 @@ export * from './interface/adventure/apiResponse';
 
 // ATTRIBUTE
 export * from './interface/attribute/attribute';
-export * from './interface/attribute/apiRequest';
-export * from './interface/attribute/apiResponse';
+export * from './interface/attribute/attributeDTOs';
+
+// AUTH
+export * from './interface/auth/authDTOs';
 
 // CHARACTER
 export * from './interface/character/character';
-export * from './interface/character/apiRequest';
-export * from './interface/character/apiResponse';
+export * from './interface/character/characterDTOs';
 
 // CHARACTER ATTRIBUTE
 export * from './interface/character/characterAttribute/characterAttribute';
@@ -28,8 +29,7 @@ export * from './interface/character/characterAttribute/apiResponse';
 
 // CHARACTER CURRENCY
 export * from './interface/character/characterCurrency/characterCurrency';
-export * from './interface/character/characterCurrency/apiRequest';
-export * from './interface/character/characterCurrency/apiResponse';
+export * from './interface/character/characterCurrency/characterCurrencyDTOs';
 
 // CHARACTER EQUIPMENT
 export * from './interface/character/characterEquipment/characterEquipment';

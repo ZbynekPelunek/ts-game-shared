@@ -1,25 +1,37 @@
 import {
   CommonErrorResponse,
-  CommonSuccessResponse,
+  CommonSuccessResponse
 } from '../../API/commonResponse';
 import { CharacterAttributeDTO } from './characterAttribute';
 
-export interface ListCharacterAttributes extends CommonSuccessResponse {
-  characterAttributes: CharacterAttributeDTO[];
-}
+export interface GetCharacterAttributesResponseDTO
+  extends Pick<
+    CharacterAttributeDTO,
+    | 'addedValue'
+    | 'attribute'
+    | 'attributeName'
+    | 'baseValue'
+    | 'characterId'
+    | 'totalValue'
+  > {}
 
-export interface CreateCharacterAttribute extends CommonSuccessResponse {
-  characterAttribute: CharacterAttributeDTO;
+export interface CreateCharacterAttributeResponseDTO
+  extends CommonSuccessResponse {
+  characterAttribute: Pick<
+    CharacterAttributeDTO,
+    | 'addedValue'
+    | 'attribute'
+    | 'attributeName'
+    | 'baseValue'
+    | 'characterId'
+    | 'totalValue'
+  >;
 }
-
-export interface CreateCharacterAttributeBundle extends CommonSuccessResponse {}
 
 export type CreateCharacterAttributeResponse =
-  | CreateCharacterAttribute
+  | CreateCharacterAttributeResponseDTO
   | CommonErrorResponse;
-export type CreateCharacterAttributeBundleResponse =
-  | CreateCharacterAttributeBundle
-  | CommonErrorResponse;
+
 export type ListCharacterAttributesResponse =
-  | ListCharacterAttributes
+  | { success: true; characterAttributes: GetCharacterAttributesResponseDTO[] }
   | CommonErrorResponse;

@@ -1,15 +1,18 @@
 import { ParsedQs } from 'qs';
-import { CharacterAttributeCreateDTO } from './characterAttribute';
+import { AddedValue, CharacterAttributeDTO } from './characterAttribute';
 
 export interface ListCharacterAttributesRequestQuery extends ParsedQs {
   characterId?: string;
   populateAttribute?: string;
 }
 
-export interface CharacterAttributeCreateBody {
-  characterAttribute: CharacterAttributeCreateDTO;
-}
-
-export interface CharacterAttributeCreateBundleBody {
-  characterAttributes: CharacterAttributeCreateDTO[];
+export interface CreateCharacterAttributeRequestDTO
+  extends Omit<
+    Pick<
+      CharacterAttributeDTO,
+      'addedValue' | 'attributeName' | 'baseValue' | 'characterId'
+    >,
+    'addedValue'
+  > {
+  addedValue?: Partial<AddedValue>;
 }
