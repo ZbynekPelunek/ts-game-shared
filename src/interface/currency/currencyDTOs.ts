@@ -22,7 +22,8 @@ export interface GetCurrencyRequestParams extends ParamsDictionary {
   currencyId: CurrencyId;
 }
 
-export interface GetCurrencyResponseDTO extends Pick<CurrencyDTO, '_id'> {}
+export interface GetCurrencyResponseDTO
+  extends Pick<CurrencyDTO, '_id' | 'cap' | 'desc' | 'label'> {}
 
 export type GetCurrencyResponse =
   | {

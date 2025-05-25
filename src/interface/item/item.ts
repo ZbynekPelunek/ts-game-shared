@@ -11,6 +11,7 @@ export interface CommonItemParams {
   };
   maxAmount?: number;
   quality?: ItemQuality;
+  levelReq?: number;
 }
 
 export enum ItemQuality {
@@ -18,10 +19,10 @@ export enum ItemQuality {
   UNCOMMON = 'UNCOMMON',
   RARE = 'RARE',
   EPIC = 'EPIC',
-  LEGENDARY = 'LEGENDARY',
+  LEGENDARY = 'LEGENDARY'
 }
 
 export enum ItemType {
   EQUIPMENT = 'EQUIPMENT',
-  REAGENT = 'REAGENT',
+  REAGENT = 'REAGENT'
 }

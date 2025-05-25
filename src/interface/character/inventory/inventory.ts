@@ -1,5 +1,5 @@
-import { Types } from "mongoose";
-import { CommonItemParams } from "../../item/item";
+import { Types } from 'mongoose';
+import { CommonItemParams } from '../../item/item';
 
 export interface CommonInventoryParams {
   slot: number;
@@ -22,10 +22,11 @@ export interface InventoryItem {
 }
 
 export enum InventoryPostActions {
-  NEW = "createNew",
-  ADD_ITEM = "addItem",
+  NEW = 'createNew',
+  ADD_ITEM = 'addItem'
 }
 
 export enum InventoryPatchActions {
-  SELL_ITEM = "sellItem",
+  SELL_ITEM = 'sellItem',
+  EQUIP_ITEM = 'equipItem'
 }

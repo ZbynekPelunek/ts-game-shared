@@ -12,7 +12,6 @@ export interface GetInventoryRequestParams extends ParamsDictionary {
 }
 
 export interface CreateInventoryRequestBody {
-  characterId: string;
   slot?: number;
   itemId?: number | null;
 }

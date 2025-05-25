@@ -5,7 +5,7 @@ import { ResultState } from './result';
 
 export interface ListResultsRequestQuery extends CommonListRequestQuery {
   characterId?: string;
-  state?: ResultState;
+  state?: ResultState | ResultState[];
 }
 
 export interface GetResultRequestParams extends ParamsDictionary {
@@ -13,6 +13,6 @@ export interface GetResultRequestParams extends ParamsDictionary {
 }
 
 export interface CreateResultRequestBody {
-  characterId: string;
+  //characterId: string;
   adventureId: number;
 }

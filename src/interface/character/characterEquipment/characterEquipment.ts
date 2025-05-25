@@ -6,7 +6,7 @@ export enum EquipmentSlot {
   CHEST = 'CHEST',
   // HANDS = 'HANDS',
   LEGS = 'LEGS',
-  MAIN_HAND = 'MAIN_HAND',
+  MAIN_HAND = 'MAIN_HAND'
   // OFF_HAND = 'OFF_HAND',
   // ONE_HAND = 'ONE_HAND',
   // TWO_HAND = 'TWO_HAND',
@@ -44,11 +44,10 @@ export interface CharacterEquipmentFrontend extends CommonEquipmentSlotParams {
 }
 
 export enum CharacterEquipmentPostActions {
-  EQUIP_ITEM = 'equipItem',
+  EQUIP_ITEM = 'equipItem'
 }
 
 export enum CharacterEquipmentPatchActions {
-  EQUIP_ITEM = 'equipItem',
   UNEQUIP_ITEM = 'unequipItem',
   SELL_ITEM = 'sellItem'
 }

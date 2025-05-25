@@ -1,5 +1,9 @@
 import { AttributeName, MainAttributeNames } from '../attribute/attribute';
-import { EquipmentArmor, EquipmentSlot, EquipmentWeapon } from '../character/characterEquipment/characterEquipment';
+import {
+  EquipmentArmor,
+  EquipmentSlot,
+  EquipmentWeapon
+} from '../character/characterEquipment/characterEquipment';
 import { CommonItemParams, ItemQuality } from './item';
 
 export interface CommonItemsEquipmenParams extends CommonItemParams {
@@ -9,12 +13,11 @@ export interface CommonItemsEquipmenParams extends CommonItemParams {
   equipmentType: ArmorType | WeaponType;
   setId?: number;
   maxItemLevel?: number;
-  levelReq?: number;
 }
 
 interface RequiredArmorItemAttribute extends ItemAttribute {
   attributeName: MainAttributeNames.ARMOR;
-  requiredQuality: ItemQuality.COMMON
+  requiredQuality: ItemQuality.COMMON;
 }
 
 export interface Armor extends CommonItemsEquipmenParams {
@@ -25,17 +28,20 @@ export interface Armor extends CommonItemsEquipmenParams {
 
 interface RequiredWeaponItemAttribute_1 extends ItemAttribute {
   attributeName: MainAttributeNames.MIN_DAMAGE;
-  requiredQuality: ItemQuality.COMMON
+  requiredQuality: ItemQuality.COMMON;
 }
 
 interface RequiredWeaponItemAttribute_2 extends ItemAttribute {
   attributeName: MainAttributeNames.MAX_DAMAGE;
-  requiredQuality: ItemQuality.COMMON
+  requiredQuality: ItemQuality.COMMON;
 }
 
-
 export interface Weapon extends CommonItemsEquipmenParams {
-  attributes: [RequiredWeaponItemAttribute_1, RequiredWeaponItemAttribute_2, ...ItemAttribute[]];
+  attributes: [
+    RequiredWeaponItemAttribute_1,
+    RequiredWeaponItemAttribute_2,
+    ...ItemAttribute[]
+  ];
   equipmentType: WeaponType;
   slot: EquipmentWeapon;
 }
@@ -61,7 +67,7 @@ export enum WeaponType {
   STAFF = 'STAFF',
   WAND = 'WAND',
   AXE_1HAND = 'AXE_1HAND',
-  AXE_2HAND = 'AXE_2HAND',
+  AXE_2HAND = 'AXE_2HAND'
 }
 
 export interface ItemAttribute {
