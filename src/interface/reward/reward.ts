@@ -1,7 +1,7 @@
 import { Document } from 'mongoose';
 import { RequireAtLeastOne } from '../../type/atLeastOne';
 import { CurrencyId } from '../currency/currency';
-import { CommonItemsEquipmenParams } from '../item/Equipment';
+import { CommonItemsEquipmentParams } from '../item/Equipment';
 import { CurrencyDTO } from '../currency/currencyDTOs';
 
 type RewardBasicParams = { _id: number };
@@ -18,7 +18,7 @@ export interface RewardCurrency {
 }
 
 export interface RewardItem {
-  itemId: number | CommonItemsEquipmenParams;
+  itemId: number | CommonItemsEquipmentParams;
   amount: number;
 }
 

@@ -6,7 +6,7 @@ import {
 } from '../character/characterEquipment/characterEquipment';
 import { CommonItemParams, ItemQuality } from './item';
 
-export interface CommonItemsEquipmenParams extends CommonItemParams {
+export interface CommonItemsEquipmentParams extends CommonItemParams {
   itemLevel: number;
   attributes: [ItemAttribute, ...ItemAttribute[]];
   slot: EquipmentSlot;
@@ -20,7 +20,7 @@ interface RequiredArmorItemAttribute extends ItemAttribute {
   requiredQuality: ItemQuality.COMMON;
 }
 
-export interface Armor extends CommonItemsEquipmenParams {
+export interface Armor extends CommonItemsEquipmentParams {
   attributes: [RequiredArmorItemAttribute, ...ItemAttribute[]];
   equipmentType: ArmorType;
   slot: EquipmentArmor;
@@ -36,7 +36,7 @@ interface RequiredWeaponItemAttribute_2 extends ItemAttribute {
   requiredQuality: ItemQuality.COMMON;
 }
 
-export interface Weapon extends CommonItemsEquipmenParams {
+export interface Weapon extends CommonItemsEquipmentParams {
   attributes: [
     RequiredWeaponItemAttribute_1,
     RequiredWeaponItemAttribute_2,
@@ -46,19 +46,10 @@ export interface Weapon extends CommonItemsEquipmenParams {
   slot: EquipmentWeapon;
 }
 
-// export interface ItemsEquipmentBackend extends CommonItemsEquipmenParams {
-//   _id: number;
-// }
-
-// export interface ItemsEquipmentFrontend extends CommonItemsEquipmenParams {
-//   itemId: number;
-// }
-
 export enum ArmorType {
   CLOTH = 'CLOTH',
   LEATHER = 'LEATHER',
-  PLATE = 'PLATE',
-  SHIELD = 'SHIELD'
+  PLATE = 'PLATE'
 }
 
 export enum WeaponType {
