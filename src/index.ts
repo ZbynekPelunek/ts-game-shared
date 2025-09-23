@@ -8,6 +8,7 @@ export * from './interface/account/accountDTOs';
 
 // ADVENTURE
 export * from './interface/adventure/adventure';
+export * from './interface/adventure/adventureDTOs';
 export * from './interface/adventure/apiRequest';
 export * from './interface/adventure/apiResponse';
 
