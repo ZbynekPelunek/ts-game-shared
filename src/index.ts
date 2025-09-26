@@ -1,6 +1,7 @@
 // API
 export * from './interface/API/apiAddress';
 export * from './interface/API/error';
+export * from './interface/API/commonResponse';
 
 // ACCOUNT
 export * from './interface/account/account';
