@@ -56,3 +56,8 @@ export interface EnemyDTO
     multistrikeHits: number;
   };
 }
+
+export interface EnemyDTOInternal extends EnemyDTO {
+  createdAt: Date;
+  updatedAt: Date;
+}
