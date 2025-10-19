@@ -5,7 +5,6 @@ import { AdventureTypes } from './adventure';
 
 export interface ListAdventuresRequestQuery extends CommonListRequestQuery {
   adventureId?: string;
-  populateReward?: string;
   adventureLevel?: string;
   type?: AdventureTypes;
 }

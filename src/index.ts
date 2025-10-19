@@ -62,8 +62,3 @@ export * from './interface/item/apiResponse';
 export * from './interface/result/result';
 export * from './interface/result/apiRequest';
 export * from './interface/result/apiResponse';
-
-// REWARD
-export * from './interface/reward/reward';
-export * from './interface/reward/apiRequest';
-export * from './interface/reward/apiResponse';

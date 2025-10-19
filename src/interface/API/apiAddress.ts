@@ -14,8 +14,8 @@ export enum ApiRoutes {
   CHARACTER_CURRENCIES = 'character-currencies',
   CHARACTER_EQUIPMENT = 'character-equipment',
   ITEMS = 'items',
-  REWARDS = 'rewards',
   ENEMIES = 'enemies',
   CURRENCIES = 'currencies',
-  AUTH = 'auth'
+  AUTH = 'auth',
+  CONFIG = 'config'
 }

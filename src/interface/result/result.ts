@@ -1,5 +1,5 @@
 import { Types } from 'mongoose';
-import { RewardCurrency, RewardItem } from '../reward/reward';
+import { RewardCurrency, RewardItem } from '../adventure/adventure';
 
 export interface CommonResultParams {
   adventureId: number;

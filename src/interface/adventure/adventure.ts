@@ -1,4 +1,6 @@
-import { Reward } from '../reward/reward';
+import { CurrencyId } from '../currency/currency';
+import { CurrencyDTO } from '../currency/currencyDTOs';
+import { CommonItemsEquipmentParams } from '../item/Equipment';
 
 export interface Adventure {
   _id: number;
@@ -12,7 +14,18 @@ export interface Adventure {
 }
 
 export interface AdventureReward {
-  rewardId: number | Reward;
+  currencies?: [RewardCurrency, ...RewardCurrency[]];
+  items?: [RewardItem, ...RewardItem[]];
+  experience?: number;
+}
+
+export interface RewardCurrency {
+  currencyId: CurrencyId | CurrencyDTO;
+  amount: number;
+}
+
+export interface RewardItem {
+  itemId: number | CommonItemsEquipmentParams;
   amount: number;
 }
 
