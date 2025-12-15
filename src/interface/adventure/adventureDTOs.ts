@@ -1,6 +1,5 @@
 import { ParamsDictionary } from 'express-serve-static-core';
 
-import { CommonErrorResponse } from '../API/commonResponse';
 import { Adventure, AdventureReward, AdventureTypes } from './adventure';
 
 //CREATE
@@ -17,9 +16,9 @@ export interface CreateAdventureRequestDTO {
 
 export interface CreateAdventureResponseDTO extends Pick<Adventure, '_id' | 'name' | 'adventureLevel' | 'type'> {}
 
-export type CreateAdventureResponse =
-  | { success: true; adventure: CreateAdventureResponseDTO }
-  | CommonErrorResponse;
+export interface CreateAdventureResponse {
+  adventure: CreateAdventureResponseDTO;
+}
 
 //UPDATE
 export interface UpdateAdventureRequestParams extends ParamsDictionary {
@@ -34,16 +33,13 @@ export interface UpdateAdventureRequestDTO
 export interface UpdateAdventureResponseDTO
   extends Pick<Adventure, '_id' | 'name' | 'adventureLevel' | 'type' | 'timeInSeconds' | 'rewards'> {}
 
-export type UpdateAdventureResponse =
-  | {
-      success: true;
-      adventure: UpdateAdventureResponseDTO;
-    }
-  | CommonErrorResponse;
+export interface UpdateAdventureResponse {
+  adventure: UpdateAdventureResponseDTO;
+}
 
 //DELETE
 export interface DeleteAdventureRequestParams extends ParamsDictionary {
   adventureId: string;
 }
 
-export type DeleteAdventureResponse = { success: true } | CommonErrorResponse;
+export type DeleteAdventureResponse = {};

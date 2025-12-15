@@ -6,7 +6,8 @@ export enum EquipmentSlot {
   CHEST = 'CHEST',
   // HANDS = 'HANDS',
   LEGS = 'LEGS',
-  MAIN_HAND = 'MAIN_HAND'
+  MAIN_HAND = 'MAIN_HAND',
+  TRINKET = 'TRINKET'
   // OFF_HAND = 'OFF_HAND',
   // ONE_HAND = 'ONE_HAND',
   // TWO_HAND = 'TWO_HAND',
@@ -15,32 +16,13 @@ export enum EquipmentSlot {
 
 export type EquipmentArmor = EquipmentSlot.CHEST | EquipmentSlot.LEGS;
 export type EquipmentWeapon = EquipmentSlot.MAIN_HAND;
+export type EquipmentTrinket = EquipmentSlot.TRINKET;
 
-//export type UiPosition = 'left' | 'right' | 'bottom';
-export enum UiPosition {
-  LEFT = 'LEFT',
-  RIGHT = 'RIGHT',
-  BOTTOM = 'BOTTOM'
-}
-
-export interface CommonEquipmentSlotParams {
-  uiPosition: UiPosition;
+export interface CharacterEquipment {
+  id: number;
   slot: EquipmentSlot;
-  itemId: number | null;
-}
-
-export interface CharacterEquipmentItem {
-  itemId: number;
-}
-
-export interface CharacterEquipmentBackend extends CommonEquipmentSlotParams {
   characterId: Types.ObjectId;
-  _id?: Types.ObjectId;
-}
-
-export interface CharacterEquipmentFrontend extends CommonEquipmentSlotParams {
-  _id: string;
-  characterId: string;
+  itemId: number | null;
 }
 
 export enum CharacterEquipmentPostActions {

@@ -3,7 +3,6 @@ import { ParamsDictionary } from 'express-serve-static-core';
 
 import { CharacterCurrency } from './characterCurrency';
 import { CurrencyId } from '../../currency/currency';
-import { CommonErrorResponse } from '../../API/commonResponse';
 
 export interface CharacterCurrencyDTO
   extends Pick<CharacterCurrency, 'amount' | 'currencyId' | 'currency'> {
@@ -23,9 +22,9 @@ export interface ListCharacterCurrenciesResponseDTO
     '_id' | 'amount' | 'currencyId' | 'currency'
   > {}
 
-export type ListCharacterCurrenciesResponse =
-  | { success: true; characterCurrencies: ListCharacterCurrenciesResponseDTO[] }
-  | CommonErrorResponse;
+export interface ListCharacterCurrenciesResponse {
+  characterCurrencies: ListCharacterCurrenciesResponseDTO[];
+}
 
 //CREATE
 export interface CreateCharacterCurrencyRequestDTO
@@ -36,9 +35,9 @@ export interface CreateCharacterCurrencyRequestDTO
 export interface CreateCharacterCurrencyResponseDTO
   extends Pick<CharacterCurrencyDTO, 'amount' | 'currencyId'> {}
 
-export type CreateCharacterCurrencyResponse =
-  | { success: true; characterCurrency: CreateCharacterCurrencyResponseDTO }
-  | CommonErrorResponse;
+export interface CreateCharacterCurrencyResponse {
+  characterCurrency: CreateCharacterCurrencyResponseDTO;
+}
 
 //UPDATE
 export interface UpdateCharacterCurrencyRequestParams extends ParamsDictionary {
@@ -51,6 +50,6 @@ export interface UpdateCharacterCurrencyRequestDTO
 export interface UpdateCharacterCurrencyResponseDTO
   extends Pick<CharacterCurrencyDTO, 'amount' | 'currencyId'> {}
 
-export type UpdateCharacterCurrencyResponse =
-  | { success: true; characterCurrency: CreateCharacterCurrencyResponseDTO }
-  | CommonErrorResponse;
+export interface UpdateCharacterCurrencyResponse {
+  characterCurrency: CreateCharacterCurrencyResponseDTO;
+}

@@ -1,8 +1,6 @@
 import { ApiErrorResponse } from './error';
 
-export interface CommonSuccessResponse {
-  success: true;
-}
+export interface CommonSuccessResponse {}
 
 export interface CommonErrorResponse {
   success: false;

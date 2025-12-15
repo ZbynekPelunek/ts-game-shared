@@ -35,6 +35,7 @@ export * from './interface/character/characterCurrency/characterCurrencyDTOs';
 
 // CHARACTER EQUIPMENT
 export * from './interface/character/characterEquipment/characterEquipment';
+export * from './interface/character/characterEquipment/characterEquipmentDTOs';
 export * from './interface/character/characterEquipment/apiRequest';
 export * from './interface/character/characterEquipment/apiResponse';
 

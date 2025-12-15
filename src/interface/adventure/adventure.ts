@@ -1,6 +1,6 @@
 import { CurrencyId } from '../currency/currency';
 import { CurrencyDTO } from '../currency/currencyDTOs';
-import { CommonItemsEquipmentParams } from '../item/Equipment';
+import { CommonItemParams } from '../item/item';
 
 export interface Adventure {
   _id: number;
@@ -25,7 +25,7 @@ export interface RewardCurrency {
 }
 
 export interface RewardItem {
-  itemId: number | CommonItemsEquipmentParams;
+  itemId: number | CommonItemParams;
   amount: number;
 }
 

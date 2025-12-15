@@ -2,49 +2,54 @@ import { AttributeName, MainAttributeNames } from '../attribute/attribute';
 import {
   EquipmentArmor,
   EquipmentSlot,
-  EquipmentWeapon
+  EquipmentWeapon,
+  EquipmentTrinket
 } from '../character/characterEquipment/characterEquipment';
-import { CommonItemParams, ItemQuality } from './item';
+import { CommonItemParams, ItemQuality, ItemType } from './item';
 
-export interface CommonItemsEquipmentParams extends CommonItemParams {
+// Base Equipment interface
+export interface BaseEquipment extends CommonItemParams {
+  itemType: ItemType.EQUIPMENT;
   itemLevel: number;
-  attributes: [ItemAttribute, ...ItemAttribute[]];
+  attributes: ItemAttribute[];
   slot: EquipmentSlot;
-  equipmentType: ArmorType | WeaponType;
   setId?: number;
   maxItemLevel?: number;
+  equipmentType: EquipmentType;
 }
 
-interface RequiredArmorItemAttribute extends ItemAttribute {
-  attributeName: MainAttributeNames.ARMOR;
-  requiredQuality: ItemQuality.COMMON;
+// Equipment subtypes enum
+export enum EquipmentType {
+  ARMOR = 'ARMOR',
+  WEAPON = 'WEAPON',
+  TRINKET = 'TRINKET'
 }
 
-export interface Armor extends CommonItemsEquipmentParams {
-  attributes: [RequiredArmorItemAttribute, ...ItemAttribute[]];
-  equipmentType: ArmorType;
+// Armor specific interface
+export interface Armor extends BaseEquipment {
+  equipmentType: EquipmentType.ARMOR;
+  armorType: ArmorType;
   slot: EquipmentArmor;
+  attributes: [RequiredArmorAttribute, ...ItemAttribute[]];
 }
 
-interface RequiredWeaponItemAttribute_1 extends ItemAttribute {
-  attributeName: MainAttributeNames.MIN_DAMAGE;
-  requiredQuality: ItemQuality.COMMON;
-}
-
-interface RequiredWeaponItemAttribute_2 extends ItemAttribute {
-  attributeName: MainAttributeNames.MAX_DAMAGE;
-  requiredQuality: ItemQuality.COMMON;
-}
-
-export interface Weapon extends CommonItemsEquipmentParams {
-  attributes: [
-    RequiredWeaponItemAttribute_1,
-    RequiredWeaponItemAttribute_2,
-    ...ItemAttribute[]
-  ];
-  equipmentType: WeaponType;
+// Weapon specific interface
+export interface Weapon extends BaseEquipment {
+  equipmentType: EquipmentType.WEAPON;
+  weaponType: WeaponType;
   slot: EquipmentWeapon;
+  attributes: [RequiredMinDamageAttribute, RequiredMaxDamageAttribute, ...ItemAttribute[]];
 }
+
+// Trinket specific interface
+export interface Trinket extends BaseEquipment {
+  equipmentType: EquipmentType.TRINKET;
+  slot: EquipmentTrinket;
+  attributes: ItemAttribute[];
+}
+
+// Union type for all equipment
+export type Equipment = Armor | Weapon | Trinket;
 
 export enum ArmorType {
   CLOTH = 'CLOTH',
@@ -65,4 +70,20 @@ export interface ItemAttribute {
   attributeName: AttributeName;
   attributeValue: number;
   requiredQuality?: ItemQuality;
+}
+
+// Required attribute types for validation
+interface RequiredArmorAttribute extends ItemAttribute {
+  attributeName: MainAttributeNames.ARMOR;
+  requiredQuality: ItemQuality.COMMON;
+}
+
+interface RequiredMinDamageAttribute extends ItemAttribute {
+  attributeName: MainAttributeNames.MIN_DAMAGE;
+  requiredQuality: ItemQuality.COMMON;
+}
+
+interface RequiredMaxDamageAttribute extends ItemAttribute {
+  attributeName: MainAttributeNames.MAX_DAMAGE;
+  requiredQuality: ItemQuality.COMMON;
 }

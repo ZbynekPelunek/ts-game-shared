@@ -1,6 +1,5 @@
 import { ParamsDictionary } from 'express-serve-static-core';
 
-import { CommonErrorResponse } from '../API/commonResponse';
 import { Account } from './account';
 
 export interface AccountDTO
@@ -12,12 +11,9 @@ export interface AccountDTO
 //LIST
 export interface ListAccountsResponseDTO extends Pick<AccountDTO, '_id'> {}
 
-export type ListAccountsResponse =
-  | {
-      success: true;
-      accounts: ListAccountsResponseDTO[];
-    }
-  | CommonErrorResponse;
+export interface ListAccountsResponse {
+  accounts: ListAccountsResponseDTO[];
+}
 
 //GET ONE
 export interface GetAccountRequestParams extends ParamsDictionary {
@@ -26,12 +22,9 @@ export interface GetAccountRequestParams extends ParamsDictionary {
 
 export interface GetAccountResponseDTO extends Pick<AccountDTO, '_id'> {}
 
-export type GetAccountResponse =
-  | {
-      success: true;
-      account: GetAccountResponseDTO;
-    }
-  | CommonErrorResponse;
+export interface GetAccountResponse {
+  account: GetAccountResponseDTO;
+}
 
 //CREATE
 export interface CreateAccountRequestDTO
@@ -40,9 +33,9 @@ export interface CreateAccountRequestDTO
 export interface CreateAccountResponseDTO
   extends Pick<AccountDTO, '_id' | 'email' | 'username'> {}
 
-export type CreateAccountResponse =
-  | { success: true; account: CreateAccountResponseDTO }
-  | CommonErrorResponse;
+export interface CreateAccountResponse {
+  account: CreateAccountResponseDTO;
+}
 
 //UPDATE
 export interface UpdateAccountRequestParams extends ParamsDictionary {
@@ -57,16 +50,13 @@ export interface UpdateAccountRequestDTO
 export interface UpdateAccountResponseDTO
   extends Pick<AccountDTO, '_id' | 'email' | 'username' | 'accountLevel'> {}
 
-export type UpdateAccountResponse =
-  | {
-      success: true;
-      account: UpdateAccountResponseDTO;
-    }
-  | CommonErrorResponse;
+export interface UpdateAccountResponse {
+  account: UpdateAccountResponseDTO;
+}
 
 //DELETE
 export interface DeleteAccountRequestParams extends ParamsDictionary {
   accountId: string;
 }
 
-export type DeleteAccountResponse = { success: true } | CommonErrorResponse;
+export type DeleteAccountResponse = {};

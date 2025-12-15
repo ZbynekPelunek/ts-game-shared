@@ -1,32 +1,24 @@
-import { CharacterEquipmentFrontend } from './characterEquipment';
-import {
-  CommonErrorResponse,
-  CommonSuccessResponse,
-} from '../../API/commonResponse';
+import { CharacterEquipmentDTO } from './characterEquipmentDTOs';
 
-export interface ListCharacterEquipments extends CommonSuccessResponse {
-  characterEquipments: CharacterEquipmentFrontend[];
+export interface ListCharacterEquipmentsResponseDTO
+  extends Pick<CharacterEquipmentDTO, '_id' | 'id' | 'slot' | 'itemId' | 'characterId'> {}
+
+export interface ListCharacterEquipmentsResponse {
+  characterEquipments: ListCharacterEquipmentsResponseDTO[];
 }
 
-export interface CreateCharacterEquipment extends CommonSuccessResponse {
-  characterEquipment: CharacterEquipmentFrontend[];
+export interface CreateCharacterEquipmentResponseDTO
+  extends Pick<CharacterEquipmentDTO, '_id' | 'id' | 'slot' | 'itemId' | 'characterId'> {}
+
+export interface CreateCharacterEquipmentResponse {
+  characterEquipment: CreateCharacterEquipmentResponseDTO[];
 }
 
-export interface UpdateCharacterEquipment extends CommonSuccessResponse {
-  characterEquipment: CharacterEquipmentFrontend;
+export interface UpdateCharacterEquipmentResponseDTO
+  extends Pick<CharacterEquipmentDTO, '_id' | 'id' | 'slot' | 'itemId' | 'characterId'> {}
+
+export interface UpdateCharacterEquipmentResponse {
+  characterEquipment: UpdateCharacterEquipmentResponseDTO;
 }
 
-export interface CharacterEquipmentUnequip extends CommonSuccessResponse {}
-
-export type ListCharacterEquipmentsResponse =
-  | ListCharacterEquipments
-  | CommonErrorResponse;
-export type CreateCharacterEquipmentResponse =
-  | CreateCharacterEquipment
-  | CommonErrorResponse;
-export type UpdateCharacterEquipmentResponse =
-  | UpdateCharacterEquipment
-  | CommonErrorResponse;
-export type CharacterEquipmentUnequipResponse =
-  | CharacterEquipmentUnequip
-  | CommonErrorResponse;
+export type CharacterEquipmentUnequipResponse = {};

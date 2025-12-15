@@ -1,24 +1,24 @@
 import { CommonItemParams } from './item';
-import { CommonItemsEquipmentParams } from './Equipment';
+import { Equipment } from './Equipment';
 import {
   CommonErrorResponse,
   CommonSuccessResponse
 } from '../API/commonResponse';
 
 export interface ListItems extends CommonSuccessResponse {
-  items: CommonItemParams[] | CommonItemsEquipmentParams[];
+  items: CommonItemParams[];
 }
 
 export interface ListItemsInternal {
-  items: CommonItemParams[] | CommonItemsEquipmentParams[];
+  items: CommonItemParams[];
 }
 
 export interface GetItem extends CommonSuccessResponse {
-  item: CommonItemParams | CommonItemsEquipmentParams;
+  item: CommonItemParams;
 }
 
 export interface GetItemInternal {
-  item: CommonItemParams | CommonItemsEquipmentParams;
+  item: CommonItemParams;
 }
 
 export type ListItemsResponse = ListItems | CommonErrorResponse;

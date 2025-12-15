@@ -1,6 +1,5 @@
 import { ParamsDictionary } from 'express-serve-static-core';
 
-import { CommonErrorResponse } from '../API/commonResponse';
 import { Currency, CurrencyId } from './currency';
 
 export interface CurrencyDTO
@@ -10,12 +9,9 @@ export interface CurrencyDTO
 export interface ListCurrenciesResponseDTO
   extends Pick<CurrencyDTO, '_id' | 'label' | 'cap' | 'desc'> {}
 
-export type ListCurrenciesResponse =
-  | {
-      success: true;
-      currencies: ListCurrenciesResponseDTO[];
-    }
-  | CommonErrorResponse;
+export interface ListCurrenciesResponse {
+  currencies: ListCurrenciesResponseDTO[];
+}
 
 //GET ONE
 export interface GetCurrencyRequestParams extends ParamsDictionary {
@@ -25,9 +21,6 @@ export interface GetCurrencyRequestParams extends ParamsDictionary {
 export interface GetCurrencyResponseDTO
   extends Pick<CurrencyDTO, '_id' | 'cap' | 'desc' | 'label'> {}
 
-export type GetCurrencyResponse =
-  | {
-      success: true;
-      currency: GetCurrencyResponseDTO;
-    }
-  | CommonErrorResponse;
+export interface GetCurrencyResponse {
+  currency: GetCurrencyResponseDTO;
+}

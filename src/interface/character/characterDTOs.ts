@@ -1,5 +1,4 @@
 import { ParamsDictionary } from 'express-serve-static-core';
-import { CommonErrorResponse } from '../API/commonResponse';
 import { Character } from './character';
 import { CommonListRequestQuery } from '../API/commonRequest';
 
@@ -33,9 +32,9 @@ export interface ListCharactersResponseDTO
     | 'maxExperience'
   > {}
 
-export type ListCharactersResponse =
-  | { success: true; characters: ListCharactersResponseDTO[] }
-  | CommonErrorResponse;
+export interface ListCharactersResponse {
+  characters: ListCharactersResponseDTO[];
+}
 
 //GET ONE
 export interface GetCharacterRequestParams extends ParamsDictionary {
@@ -54,9 +53,9 @@ export interface GetCharacterResponseDTO
     | 'maxExperience'
   > {}
 
-export type GetCharacterResponse =
-  | { success: true; character: GetCharacterResponseDTO }
-  | CommonErrorResponse;
+export interface GetCharacterResponse {
+  character: GetCharacterResponseDTO;
+}
 
 //CREATE
 export interface CreateCharacterRequestDTO
@@ -74,9 +73,9 @@ export interface CreateCharacterResponseDTO
     | 'maxExperience'
   > {}
 
-export type CreateCharacterResponse =
-  | { success: true; character: CreateCharacterResponseDTO }
-  | CommonErrorResponse;
+export interface CreateCharacterResponse {
+  character: CreateCharacterResponseDTO;
+}
 
 //UPDATE
 export interface UpdateCharacterRequestParams extends ParamsDictionary {
@@ -100,16 +99,13 @@ export interface UpdateCharacterResponseDTO
     | 'maxExperience'
   > {}
 
-export type UpdateCharacterResponse =
-  | {
-      success: true;
-      character: UpdateCharacterResponseDTO;
-    }
-  | CommonErrorResponse;
+export interface UpdateCharacterResponse {
+  character: UpdateCharacterResponseDTO;
+}
 
 //DELETE
 export interface DeleteCharacterRequestParams extends ParamsDictionary {
   characterId: string;
 }
 
-export type DeleteCharacterResponse = { success: true } | CommonErrorResponse;
+export type DeleteCharacterResponse = {};

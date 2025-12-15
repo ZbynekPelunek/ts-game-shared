@@ -1,5 +1,4 @@
 import { ParamsDictionary } from 'express-serve-static-core';
-import { CommonErrorResponse } from '../API/commonResponse';
 import { Attribute } from './attribute';
 
 export interface AttributeDTO
@@ -14,12 +13,9 @@ export interface ListAttributesResponseDTO
     'label' | 'attributeName' | 'isPercent' | 'desc'
   > {}
 
-export type ListAttributesResponse =
-  | {
-      success: true;
-      attributes: ListAttributesResponseDTO[];
-    }
-  | CommonErrorResponse;
+export interface ListAttributesResponse {
+  attributes: ListAttributesResponseDTO[];
+}
 
 //GET ONE
 export interface GetAttributeRequestParams extends ParamsDictionary {
@@ -32,9 +28,6 @@ export interface GetAttributeResponseDTO
     'label' | 'attributeName' | 'isPercent' | 'desc'
   > {}
 
-export type GetAttributeResponse =
-  | {
-      success: true;
-      attribute: GetAttributeResponseDTO;
-    }
-  | CommonErrorResponse;
+export interface GetAttributeResponse {
+  attribute: GetAttributeResponseDTO;
+}
