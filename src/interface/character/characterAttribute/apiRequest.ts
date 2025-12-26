@@ -16,3 +16,7 @@ export interface CreateCharacterAttributeRequestDTO
   > {
   addedValue?: Partial<AddedValue>;
 }
+
+export interface CalculateAttributeBonusesRequestQuery extends ParsedQs {
+  characterId: string;
+}

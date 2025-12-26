@@ -59,7 +59,9 @@ export interface GetCharacterResponse {
 
 //CREATE
 export interface CreateCharacterRequestDTO
-  extends Pick<CharacterDTO, 'name' | 'characterClass' | 'race'> {}
+  extends Pick<CharacterDTO, 'name' | 'characterClass' | 'race'> {
+  accountId?: string; // Optional for internal API usage
+}
 
 export interface CreateCharacterResponseDTO
   extends Pick<
