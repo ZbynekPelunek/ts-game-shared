@@ -1,11 +1,13 @@
 import { Document } from 'mongoose';
 
-interface Enemy {
+export interface Enemy {
   _id: number;
   name: string;
   type: EnemyTypes;
   attributes: EnemyAttributes;
   effects: number[];
+  enemyLevel: number;
+  isLive: boolean;
 }
 
 export interface EnemyAttributes {
@@ -33,11 +35,11 @@ export enum EnemyTypes {
 }
 
 export interface EnemyMongooseSchema
-  extends Pick<Enemy, '_id' | 'attributes' | 'name' | 'type' | 'effects'> {}
+  extends Pick<Enemy, '_id' | 'attributes' | 'name' | 'type' | 'effects' | 'enemyLevel' | 'isLive'> {}
 export interface EnemyDocument extends Enemy, Document<number> {}
 
 export interface EnemyDTO
-  extends Pick<Enemy, '_id' | 'attributes' | 'name' | 'type' | 'effects'> {
+  extends Pick<Enemy, '_id' | 'attributes' | 'name' | 'type' | 'effects' | 'enemyLevel' | 'isLive'> {
   attributes: {
     health: number;
     armor: number;

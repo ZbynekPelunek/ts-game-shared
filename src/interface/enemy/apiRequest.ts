@@ -1,27 +1,19 @@
 import type { ParamsDictionary } from 'express-serve-static-core';
-import { EnemyAttributes, EnemyTypes } from './enemy';
+import { Enemy, EnemyAttributes } from './enemy';
 
 export interface GetEnemyRequestParams extends ParamsDictionary {
   enemyId: string;
 }
 
-export interface CreateEnemyRequestDTO {
-  _id: number;
-  name: string;
-  type: EnemyTypes;
-  attributes: EnemyAttributes;
-  effects: number[];
+export interface CreateEnemyRequestDTO extends Pick<Enemy, '_id' | 'name' | 'type' | 'attributes' | 'effects' | 'enemyLevel' | 'isLive'> {
 }
 
 export interface UpdateEnemyRequestParams extends ParamsDictionary {
   enemyId: string;
 }
 
-export interface UpdateEnemyRequestDTO {
-  name?: string;
-  type?: EnemyTypes;
+export interface UpdateEnemyRequestDTO extends Partial<Pick<Enemy, 'name' | 'type' | 'effects' | 'enemyLevel' | 'isLive'>> {
   attributes?: Partial<EnemyAttributes>;
-  effects?: number[];
 }
 
 export interface DeleteEnemyRequestParams extends ParamsDictionary {
