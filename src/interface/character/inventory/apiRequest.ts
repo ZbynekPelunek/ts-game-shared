@@ -20,6 +20,10 @@ export interface UpdateInventoryRequestParams extends ParamsDictionary {
   inventorySlotId: string;
 }
 
+export interface EquipItemRequestParams extends ParamsDictionary {
+  inventorySlotId: string;
+}
+
 export interface UpdateInventoryRequestBody {
   item: { itemId: number; amount: number; previousSlot?: number } | null;
 }

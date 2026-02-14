@@ -12,6 +12,22 @@ export interface GetResultRequestParams extends ParamsDictionary {
   resultId: string;
 }
 
+export interface CancelResultRequestParams extends ParamsDictionary {
+  resultId: string;
+}
+
+export interface SkipResultRequestParams extends ParamsDictionary {
+  resultId: string;
+}
+
+export interface FinishResultRequestParams extends ParamsDictionary {
+  resultId: string;
+}
+
+export interface CollectRewardRequestParams extends ParamsDictionary {
+  resultId: string;
+}
+
 export interface CreateResultRequestBody {
   //characterId: string;
   adventureId: number;
