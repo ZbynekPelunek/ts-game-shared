@@ -28,9 +28,21 @@ export type ResultDTO = Pick<
   resultId: string;
 };
 
+export interface CombatTurn {
+  round: number;
+  attacker: string;
+  defender: string;
+  baseDamage: number;
+  isCritical: boolean;
+  isMultistrike: boolean;
+  totalDamage: number;
+  defenderHPRemaining: number;
+}
+
 export interface ResultCombat {
   log: string;
   playerWon: boolean;
+  turns: CombatTurn[];
 }
 
 export interface ResultReward {
@@ -44,16 +56,16 @@ export enum ResultState {
   CANCELED = 'Canceled',
   SKIPPED = 'Skipped',
   FINISHED = 'Finished',
-  REWARD_COLLECTED = 'RewardCollected',
+  REWARD_COLLECTED = 'RewardCollected'
 }
 
 export enum ResultGetActions {
-  CHECK_IN_PROGRESS = 'checkInProgress',
+  CHECK_IN_PROGRESS = 'checkInProgress'
 }
 
 export enum ResultPatchActions {
   COLLECT_REWARD = 'collectReward',
   FINISH_RESULT = 'finishResult',
   CANCEL_ADVENTURE = 'cancelAdventure',
-  SKIP_ADVENTURE = 'skipAdventure',
+  SKIP_ADVENTURE = 'skipAdventure'
 }
