@@ -63,3 +63,8 @@ export * from './interface/item/apiResponse';
 export * from './interface/result/result';
 export * from './interface/result/apiRequest';
 export * from './interface/result/apiResponse';
+
+// CHARACTER STATS
+export * from './interface/characterStats/characterStats';
+export * from './interface/characterStats/apiRequest';
+export * from './interface/characterStats/apiResponse';

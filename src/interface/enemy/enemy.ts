@@ -26,6 +26,9 @@ export interface EnemyAttributes {
   criticalDamage?: number;
   multistrikeChance?: number;
   multistrikeHits?: number;
+
+  stunChance?: number;
+  stunDuration?: number;
 }
 
 export enum EnemyTypes {
@@ -56,6 +59,9 @@ export interface EnemyDTO
     criticalDamage: number;
     multistrikeChance: number;
     multistrikeHits: number;
+
+    stunChance?: number;
+    stunDuration?: number;
   };
 }
 

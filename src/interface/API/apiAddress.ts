@@ -18,5 +18,6 @@ export enum ApiRoutes {
   CURRENCIES = 'currencies',
   AUTH = 'auth',
   CONFIG = 'config',
-  COMBAT = 'combat'
+  COMBAT = 'combat',
+  CHARACTER_STATS = 'character-stats'
 }
