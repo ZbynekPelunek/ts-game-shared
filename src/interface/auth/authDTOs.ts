@@ -8,6 +8,7 @@ export interface AuthLoginResponseDTO
   extends Pick<AccountDTO, '_id' | 'email' | 'username'> {}
 
 export interface AuthLoginResponse {
+  token: string;
   account: AuthLoginResponseDTO;
 }
 
